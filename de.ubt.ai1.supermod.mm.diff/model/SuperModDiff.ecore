@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="diff" nsURI="http://ai1.uni-bayreuth.de/supermod/diff/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.diff">
+  <eClassifiers xsi:type="ecore:EClass" name="MatchingRole">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchedProductSpace" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductSpaceMatching">
+    <eOperations name="getMatchingRole" eType="#//MatchingRole">
+      <eParameters name="ps" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpace"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchingRoles" upperBound="-1"
+        eType="#//MatchingRole" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensionMatchings" upperBound="-1"
+        eType="#//ProductDimensionMatching"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductDimensionMatching">
+    <eOperations name="getMatchedDimension" eType="#//MatchedProductDimension">
+      <eParameters name="role" eType="#//MatchingRole"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchedDimensions" upperBound="-1"
+        eType="#//MatchedProductDimension" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootElementMatchings" upperBound="-1"
+        eType="#//ProductSpaceElementMatching" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimensionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductSpaceElementMatching">
+    <eOperations name="getMatchedElement" eType="#//MatchedProductSpaceElement">
+      <eParameters name="role" eType="#//MatchingRole"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matchedElements" upperBound="-1"
+        eType="#//MatchedProductSpaceElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subMatchings" upperBound="-1"
+        eType="#//ProductSpaceElementMatching" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MatchedProductSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//MatchingRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MatchedProductDimension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productDimension" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductDimension"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="#//MatchingRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductSpaceDelta">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productDimensionDeltas"
+        upperBound="-1" eType="#//ProductDimensionDelta"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductDimensionDelta">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="insertedElements" upperBound="-1"
+        eType="#//ProductSpaceElementDelta" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deletedElements" upperBound="-1"
+        eType="#//ProductSpaceElementDelta" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimensionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductSpaceElementDelta">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootElements" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteSet" eSuperTypes="#//ProductDimensionDelta">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ambition" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionBinding"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

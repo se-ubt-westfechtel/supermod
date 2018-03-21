@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.file.client/src" editDirectory="/de.ubt.ai1.supermod.edit.file.client/src"
+    modelPluginID="de.ubt.ai1.supermod.mm.file.client" modelName="SuperModFileClient"
+    editPluginClass="de.ubt.ai1.supermod.edit.file.client.provider.SuperModFileClientEditPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.ubt.ai1.supermod.edit.file.client"
+    tableProviders="true" colorProviders="true" fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.genmodel#//client ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core ../../de.ubt.ai1.supermod.mm.file/model/SuperModFile.genmodel#//file"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModFileClient.ecore</foreignModel>
+  <genPackages prefix="SuperModFileClient" basePackage="de.ubt.ai1.supermod.mm.file"
+      disposableProviderFactory="true" ecorePackage="SuperModFileClient.ecore#/">
+    <genClasses ecoreClass="SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/roots"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/rootUri"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/allResources"/>
+      <genOperations ecoreOperation="SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/getResource">
+        <genParameters ecoreParameter="SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/getResource/path"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/createFile">
+        <genParameters ecoreParameter="SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/createFile/path"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/createFolder">
+        <genParameters ecoreParameter="SuperModFileClient.ecore#//SingleVersionFileSystemDescriptor/createFolder/path"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModFileClient.ecore#//SingleVersionResourceDescriptor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModFileClient.ecore#//SingleVersionResourceDescriptor/name"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModFileClient.ecore#//SingleVersionResourceDescriptor/path"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//SingleVersionResourceDescriptor/container"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModFileClient.ecore#//SingleVersionResourceDescriptor/versioned"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFileClient.ecore#//SingleVersionFileDescriptor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModFileClient.ecore#//SingleVersionFileDescriptor/hash"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFileClient.ecore#//SingleVersionFolderDescriptor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//SingleVersionFolderDescriptor/contents"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//SingleVersionFolderDescriptor/allContents"/>
+      <genOperations ecoreOperation="SuperModFileClient.ecore#//SingleVersionFolderDescriptor/getContent">
+        <genParameters ecoreParameter="SuperModFileClient.ecore#//SingleVersionFolderDescriptor/getContent/name"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFileClient.ecore#//VersionedFileSystemExportTrace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//VersionedFileSystemExportTrace/pathToVersionedFileMap"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFileClient.ecore#//PathToVersionedFileMapEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModFileClient.ecore#//PathToVersionedFileMapEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//PathToVersionedFileMapEntry/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModFileClient.ecore#//VersionedFileExportTrace">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFileClient.ecore#//VersionedFileExportTrace/versionedFile"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

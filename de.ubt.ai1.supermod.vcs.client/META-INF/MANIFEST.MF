@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod VCS Client Commands
+Bundle-SymbolicName: de.ubt.ai1.supermod.vcs.client
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: com.google.inject,
+ de.ubt.ai1.supermod.mm.diff,
+ de.ubt.ai1.supermod.service,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ de.ubt.ai1.supermod.util.emf,
+ de.ubt.ai1.supermod.edit.emffile,
+ org.eclipse.ui,
+ de.ubt.ai1.supermod.mm.file.client,
+ de.ubt.ai1.supermod.service.file.client,
+ de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.service.file
+Export-Package: de.ubt.ai1.supermod.vcs.client,
+ de.ubt.ai1.supermod.vcs.client.http,
+ de.ubt.ai1.supermod.vcs.client.impl

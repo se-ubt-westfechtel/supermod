@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emffile" nsURI="http://ai1.uni-bayreuth.de/supermod/emffile/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.emffile">
+  <eClassifiers xsi:type="ecore:EClass" name="EMFFileContent" eSuperTypes="../../de.ubt.ai1.supermod.mm.file/model/SuperModFile.ecore#//VersionedFileContent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objects" upperBound="-1"
+        eType="#//EMFObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roots" upperBound="-1"
+        eType="#//EMFObject" changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFObject" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classRefs" upperBound="-1"
+        eType="#//EMFClassRef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureRefs" upperBound="-1"
+        eType="#//EMFFeatureRef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetingRefVals" upperBound="-1"
+        eType="#//EMFInternalReferenceValue" resolveProxies="false" eOpposite="#//EMFInternalReferenceValue/referencedObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetingContainmentRefVals"
+        upperBound="-1" eType="#//EMFContainmentReferenceValue" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFClassRef" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFFeatureRef" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//EMFValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueOrdering" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.list/model/SuperModList.ecore#//VersionedList"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orderedValues" unique="false"
+        upperBound="-1" eType="#//EMFValue" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFValue" abstract="true" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFAttributeValue" eSuperTypes="#//EMFValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFInternalReferenceValue" eSuperTypes="#//EMFValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedObject" eType="#//EMFObject"
+        eOpposite="#//EMFObject/targetingRefVals"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFExternalReferenceValue" eSuperTypes="#//EMFValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eObjectUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EMFContainmentReferenceValue" eSuperTypes="#//EMFInternalReferenceValue"/>
+</ecore:EPackage>

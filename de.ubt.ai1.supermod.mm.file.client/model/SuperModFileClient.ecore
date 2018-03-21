@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="client" nsURI="http://ai1.uni-bayreuth.de/supermod/file/client/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.file.client">
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVersionFileSystemDescriptor" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//SingleVersionProductDimensionDescriptor">
+    <eOperations name="getResource" eType="#//SingleVersionResourceDescriptor">
+      <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="createFile" eType="#//SingleVersionFileDescriptor">
+      <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="createFolder" eType="#//SingleVersionFolderDescriptor">
+      <eParameters name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roots" upperBound="-1"
+        eType="#//SingleVersionResourceDescriptor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allResources" upperBound="-1"
+        eType="#//SingleVersionResourceDescriptor" changeable="false" volatile="true"
+        transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVersionResourceDescriptor" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="#//SingleVersionFolderDescriptor"
+        eOpposite="#//SingleVersionFolderDescriptor/contents"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versioned" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVersionFileDescriptor" eSuperTypes="#//SingleVersionResourceDescriptor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hash" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVersionFolderDescriptor" eSuperTypes="#//SingleVersionResourceDescriptor">
+    <eOperations name="getContent" eType="#//SingleVersionResourceDescriptor">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+        eType="#//SingleVersionResourceDescriptor" containment="true" eOpposite="#//SingleVersionResourceDescriptor/container"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allContents" upperBound="-1"
+        eType="#//SingleVersionResourceDescriptor" changeable="false" volatile="true"
+        transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionedFileSystemExportTrace" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductDimensionExportTrace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pathToVersionedFileMap"
+        upperBound="-1" eType="#//PathToVersionedFileMapEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PathToVersionedFileMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//VersionedFileExportTrace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionedFileExportTrace" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionedFile" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.file/model/SuperModFile.ecore#//VersionedFile"/>
+  </eClassifiers>
+</ecore:EPackage>

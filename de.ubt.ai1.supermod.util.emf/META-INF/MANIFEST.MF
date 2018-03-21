@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ecore
+Bundle-SymbolicName: de.ubt.ai1.supermod.util.emf
+Bundle-Version: 1.0.0.qualifier
+Export-Package: de.ubt.ai1.util.emf
+Require-Bundle: org.eclipse.emf;bundle-version="2.6.0",
+ org.eclipse.emf.ecore;bundle-version="2.8.1",
+ org.eclipse.core.resources;bundle-version="3.8.1",
+ org.eclipse.core.runtime;bundle-version="3.8.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.9.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

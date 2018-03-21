@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.list/src" editDirectory="/de.ubt.ai1.supermod.edit.list/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.list/src" modelPluginID="de.ubt.ai1.supermod.mm.list"
+    modelName="SuperModList" editPluginClass="de.ubt.ai1.supermod.edit.list.provider.SuperModListEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.list.presentation.SuperModListEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.ubt.ai1.supermod.edit.list"
+    editorPluginID="de.ubt.ai1.supermod.editor.list" tableProviders="true" colorProviders="true"
+    fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModList.ecore</foreignModel>
+  <genPackages prefix="SuperModList" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      ecorePackage="SuperModList.ecore#/">
+    <genClasses ecoreClass="SuperModList.ecore#//VersionedList">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedList/vertices"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedList/edges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedList/startVertices"/>
+      <genOperations ecoreOperation="SuperModList.ecore#//VersionedList/getAllOccurrencesOf">
+        <genParameters ecoreParameter="SuperModList.ecore#//VersionedList/getAllOccurrencesOf/element"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModList.ecore#//VersionedList/linearize"/>
+      <genOperations ecoreOperation="SuperModList.ecore#//VersionedList/getEdge">
+        <genParameters ecoreParameter="SuperModList.ecore#//VersionedList/getEdge/from"/>
+        <genParameters ecoreParameter="SuperModList.ecore#//VersionedList/getEdge/to"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SuperModList.ecore#//VersionedListVertex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListVertex/element"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListVertex/incomingEdges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListVertex/outgoingEdges"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListVertex/list"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListVertex/startRef"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModList.ecore#//VersionedListEdge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListEdge/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListEdge/sink"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListEdge/list"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModList.ecore#//VersionedListStartReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListStartReference/vertex"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModList.ecore#//VersionedListStartReference/list"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

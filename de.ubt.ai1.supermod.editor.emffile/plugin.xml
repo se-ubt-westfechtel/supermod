@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SuperModEMF -->
+      <editor
+            class="de.ubt.ai1.supermod.mm.emffile.presentation.SuperModEMFFileEditor"
+            contributorClass="de.ubt.ai1.supermod.mm.emffile.presentation.SuperModEMFFileActionBarContributor"
+            default="false"
+            icon="icons/full/obj16/SuperModEMFModelFile.gif"
+            id="de.ubt.ai1.supermod.mm.emf.presentation.SuperModEMFEditorID"
+            matchingStrategy="de.ubt.ai1.supermod.editor.emffile.SuperModEMFEditorMatchingStrategy"
+            name="SuperMod Reflective EMF Model Editor">
+      </editor>
+   </extension>
+   
+   
+
+</plugin>

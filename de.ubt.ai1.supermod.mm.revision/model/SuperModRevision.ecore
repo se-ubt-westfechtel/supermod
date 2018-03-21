@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="revision" nsURI="http://ai1.uni-bayreuth.de/supermod/revision/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.revision">
+  <eClassifiers xsi:type="ecore:EClass" name="RevisionDimension" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionDimension">
+    <eOperations name="getRevisionsForBinding" upperBound="-1" eType="#//Revision">
+      <eParameters name="binding" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="getLatestRevisions" upperBound="-1" eType="#//Revision">
+      <eParameters name="revisions" upperBound="-1" eType="#//Revision"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="revisions" upperBound="-1"
+        eType="#//Revision" changeable="false" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialRevision" eType="#//Revision"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialRevisionInvariant"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latestRevisionNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//Revision"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Revision" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessors" upperBound="-1"
+        eType="#//Revision" eOpposite="#//Revision/successors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successors" upperBound="-1"
+        eType="#//Revision" eOpposite="#//Revision/predecessors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="revisionNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="committer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commitMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allPredecessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Revision/allSuccessors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSuccessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Revision/allPredecessors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="earliestPredecessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestSuccessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="revisionOption" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Option"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="revisionDefaultBinding"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//DefaultBinding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessorPreferences"
+        upperBound="-1" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Preference"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

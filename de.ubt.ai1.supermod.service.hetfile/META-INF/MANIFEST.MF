@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Heterogeneous File System Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.hetfile
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.ubt.ai1.supermod.service.file,
+ com.google.inject,
+ de.ubt.ai1.supermod.service.emffile,
+ de.ubt.ai1.supermod.service.textfile,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.mm.core,
+ de.ubt.ai1.supermod.mm.file
+Export-Package: de.ubt.ai1.supermod.service.hetfile

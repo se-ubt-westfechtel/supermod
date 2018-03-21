@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="collab" nsURI="http://ai1.uni-bayreuth.de/supermod/collab/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.collab">
+  <eClassifiers xsi:type="ecore:EClass" name="CollaborativeRevisionDimension" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionDimension">
+    <eOperations name="getRevisionsForBinding" upperBound="-1" eType="#//Revision">
+      <eParameters name="binding" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="getLatestRevisions" upperBound="-1" eType="#//Revision">
+      <eParameters name="revisions" upperBound="-1" eType="#//Revision"/>
+    </eOperations>
+    <eOperations name="getLatestPublicRevisions" upperBound="-1" eType="#//PublicRevision">
+      <eParameters name="publicRevisions" upperBound="-1" eType="#//PublicRevision"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicRevisions" upperBound="-1"
+        eType="#//PublicRevision" containment="true" eOpposite="#//PublicRevision/revisionDimension"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialPublicRevision"
+        eType="#//PublicRevision"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialPublicRevisionInvariant"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latestPublicRevisionNumber"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicHead" eType="#//PublicRevision"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentPublicRevision"
+        eType="#//PublicRevision"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allRevisions" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Revision" abstract="true" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessors" upperBound="-1"
+        eType="#//Revision" eOpposite="#//Revision/successors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successors" upperBound="-1"
+        eType="#//Revision" eOpposite="#//Revision/predecessors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allPredecessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Revision/allSuccessors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSuccessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Revision/allPredecessors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="earliestPredecessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="latestSuccessors" upperBound="-1"
+        eType="#//Revision" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="revisionOption" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Option"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="revisionDefaultBinding"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//DefaultBinding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="predecessorPreferences"
+        upperBound="-1" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Preference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="revisionNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayRevisionNumber"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="commitMessage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicRevision" eSuperTypes="#//Revision">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="revisionDimension" eType="#//CollaborativeRevisionDimension"
+        eOpposite="#//CollaborativeRevisionDimension/publicRevisions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="privateRevisions" upperBound="-1"
+        eType="#//PrivateRevision" containment="true" eOpposite="#//PrivateRevision/publicRevision"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="committer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latestPrivateRevisionNumber"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialPrivateRevision"
+        eType="#//PrivateRevision"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="privateHead" eType="#//PrivateRevision"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="head" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="finished" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finishedOption" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Option"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finishedDefaultBinding"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//DefaultBinding"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrivateRevision" eSuperTypes="#//Revision">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicRevision" eType="#//PublicRevision"
+        eOpposite="#//PublicRevision/privateRevisions"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicPredecessors" upperBound="-1"
+        eType="#//PublicRevision" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+  </eClassifiers>
+</ecore:EPackage>

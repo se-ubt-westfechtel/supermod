@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SuperStrap -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.ubt.ai1.supermod.example.bootstrap.superstrap.presentation.SuperstrapModelWizardID"
+            name="%_UI_SuperstrapModelWizard_label"
+            class="de.ubt.ai1.supermod.example.bootstrap.superstrap.presentation.SuperstrapModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SuperstrapModelFile.gif">
+         <description>%_UI_SuperstrapModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SuperStrap -->
+      <editor
+            id="de.ubt.ai1.supermod.example.bootstrap.superstrap.presentation.SuperstrapEditorID"
+            name="%_UI_SuperstrapEditor_label"
+            icon="icons/full/obj16/SuperstrapModelFile.gif"
+            extensions="superstrap"
+            class="de.ubt.ai1.supermod.example.bootstrap.superstrap.presentation.SuperstrapEditor"
+            contributorClass="de.ubt.ai1.supermod.example.bootstrap.superstrap.presentation.SuperstrapActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

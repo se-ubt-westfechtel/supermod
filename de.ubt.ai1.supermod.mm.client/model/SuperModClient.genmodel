@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.client/src" editDirectory="/de.ubt.ai1.supermod.edit.client/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.client/src" modelPluginID="de.ubt.ai1.supermod.mm.client"
+    modelName="SuperModClient" editPluginClass="de.ubt.ai1.supermod.edit.client.provider.SuperModClientEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.client.presentation.SuperModClientEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.ubt.ai1.supermod.edit.client"
+    editorPluginID="de.ubt.ai1.supermod.editor.client" tableProviders="true" colorProviders="true"
+    fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModClient.ecore</foreignModel>
+  <genPackages prefix="SuperModClient" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      ecorePackage="SuperModClient.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SuperModClient.ecore#//Severity">
+      <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/info"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/warning"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/error"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/fatal"/>
+    </genEnums>
+    <genClasses ecoreClass="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/dimensionDescriptors"/>
+      <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/isModified"/>
+      <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/setModified">
+        <genParameters ecoreParameter="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/setModified/modified"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/dimensionName"/>
+      <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/isModified"/>
+      <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/setModified">
+        <genParameters ecoreParameter="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/setModified/modified"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SuperModClient.ecore#//LocalRepository">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModClient.ecore#//LocalRepository/localDescriptor"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModClient.ecore#//LocalRepository/localChoice"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModClient.ecore#//LocalRepository/localAmbition"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//LocalRepository/masterUri"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModClient.ecore#//ConflictSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModClient.ecore#//ConflictSet/conflicts"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//ConflictSet/severity"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModClient.ecore#//Conflict">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//Conflict/severity"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModClient.ecore#//Conflict/affectedElements"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModClient.ecore#//ProductConflict">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModClient.ecore#//ProductConflict/affectedProductSpaceElements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModClient.ecore#//VersionConflict">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModClient.ecore#//VersionConflict/affectedVersionSpaceElements"/>
+    </genClasses>
+    <nestedGenPackages prefix="SuperModClient" basePackage="de.ubt.ai1.supermod.mm"
+        disposableProviderFactory="true" ecorePackage="SuperModClient.ecore#/">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SuperModClient.ecore#//Severity">
+        <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/info"/>
+        <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/warning"/>
+        <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/error"/>
+        <genEnumLiterals ecoreEnumLiteral="SuperModClient.ecore#//Severity/fatal"/>
+      </genEnums>
+      <genClasses ecoreClass="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/dimensionDescriptors"/>
+        <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/isModified"/>
+        <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/setModified">
+          <genParameters ecoreParameter="SuperModClient.ecore#//SingleVersionProductSpaceDescriptor/setModified/modified"/>
+        </genOperations>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/dimensionName"/>
+        <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/isModified"/>
+        <genOperations ecoreOperation="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/setModified">
+          <genParameters ecoreParameter="SuperModClient.ecore#//SingleVersionProductDimensionDescriptor/setModified/modified"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="SuperModClient.ecore#//LocalRepository">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SuperModClient.ecore#//LocalRepository/localDescriptor"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SuperModClient.ecore#//LocalRepository/localChoice"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference SuperModClient.ecore#//LocalRepository/localAmbition"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//LocalRepository/masterUri"/>
+      </genClasses>
+      <genClasses ecoreClass="SuperModClient.ecore#//ConflictSet">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModClient.ecore#//ConflictSet/conflicts"/>
+        <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//ConflictSet/severity"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SuperModClient.ecore#//Conflict">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModClient.ecore#//Conflict/severity"/>
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModClient.ecore#//Conflict/affectedElements"/>
+      </genClasses>
+      <genClasses ecoreClass="SuperModClient.ecore#//ProductConflict">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModClient.ecore#//ProductConflict/affectedProductSpaceElements"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="SuperModClient.ecore#//VersionConflict">
+        <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModClient.ecore#//VersionConflict/affectedVersionSpaceElements"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

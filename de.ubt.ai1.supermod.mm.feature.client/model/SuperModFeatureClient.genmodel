@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.ubt.ai1.supermod.mm.feature.client/src" editDirectory="/de.ubt.ai1.supermod.edit.feature.client/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.feature.client/src" modelPluginID="de.ubt.ai1.supermod.mm.feature.client"
+    modelName="SuperModFeatureClient" editPluginClass="de.ubt.ai1.supermod.edit.feature.client.provider.SuperModFeatureClientEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.feature.client.presentation.SuperModFeatureClientEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.ubt.ai1.supermod.edit.feature.client"
+    editorPluginID="de.ubt.ai1.supermod.editor.feature.client" tableProviders="true"
+    colorProviders="true" fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.genmodel#//client ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.genmodel#//feature"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModFeatureClient.ecore</foreignModel>
+  <genPackages prefix="SuperModFeatureClient" basePackage="de.ubt.ai1.supermod.mm.feature"
+      disposableProviderFactory="true" ecorePackage="SuperModFeatureClient.ecore#/">
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//RootFeatureConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//RootFeatureConflict/contextModel"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//ParentFeatureConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//ParentFeatureConflict/contextFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//CyclicFeatureTreeConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//CyclicFeatureTreeConflict/affectedFeatures"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//DisplayNameConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//DisplayNameConflict/contextFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//MultipleGroupMembershipConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//MultipleGroupMembershipConflict/contextFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//RemoteGroupMembershipConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//RemoteGroupMembershipConflict/contextFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//NonOptionalGroupedFeatureConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//NonOptionalGroupedFeatureConflict/contextFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//DependencyLinkTargetConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//DependencyLinkTargetConflict/contextDependency"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//DanglingFeatureConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//DanglingFeatureConflict/contextFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//DanglingGroupConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//DanglingGroupConflict/contextGroup"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//DanglingDependencyConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//DanglingDependencyConflict/contextDependency"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//SingleVersionFeatureModelDescriptor">
+      <genFeatures property="None" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//SingleVersionFeatureModelDescriptor/featureModel"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModFeatureClient.ecore#//SingleVersionFeatureModelDescriptor/modified"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//FeatureConfiguration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//FeatureConfiguration/featureModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//FeatureConfiguration/optionBinding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModFeatureClient.ecore#//FeatureConfiguration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//FeatureModelExportTrace">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//FeatureModelExportTrace/featureToFeatureMap"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeatureClient.ecore#//FeatureToFeatureMapEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//FeatureToFeatureMapEntry/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModFeatureClient.ecore#//FeatureToFeatureMapEntry/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

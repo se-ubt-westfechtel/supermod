@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod EMF File Product Space Client Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.emffile.client;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: de.ubt.ai1.supermod.service.file.client,
+ org.eclipse.core.resources,
+ de.ubt.ai1.supermod.mm.file.client,
+ com.google.inject,
+ org.eclipse.emf.ecore.xmi,
+ de.ubt.ai1.supermod.util.emf,
+ de.ubt.ai1.supermod.service.list,
+ de.ubt.ai1.supermod.mm.emffile.client,
+ de.ubt.ai1.supermod.service.list.client,
+ de.ubt.ai1.supermod.service.emffile,
+ org.eclipse.core.runtime,
+ de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.edit.emffile.client,
+ org.eclipse.emf.validation,
+ de.ubt.ai1.supermod.mm.list.client
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Export-Package: de.ubt.ai1.supermod.service.emffile.client

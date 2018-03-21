@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Logical Version Dimension Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.logical;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Require-Bundle: com.google.inject,
+ de.ubt.ai1.supermod.mm.logical,
+ de.ubt.ai1.supermod.service
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.ubt.ai1.supermod.service.logical,
+ de.ubt.ai1.supermod.service.logical.pure

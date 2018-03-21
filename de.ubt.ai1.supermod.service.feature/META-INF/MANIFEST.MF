@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Feature Version Dimension Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.feature
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Require-Bundle: com.google.inject,
+ de.ubt.ai1.supermod.mm.core,
+ de.ubt.ai1.supermod.mm.feature,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.mm.diff
+Export-Package: de.ubt.ai1.supermod.service.feature,
+ de.ubt.ai1.supermod.service.feature.pure

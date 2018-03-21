@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod File Product Space Client Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.file.client
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.mm.file,
+ de.ubt.ai1.supermod.mm.file.client,
+ com.google.inject,
+ de.ubt.ai1.supermod.service.file,
+ org.eclipse.ui.workbench,
+ org.eclipse.jface,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.util.emf
+Export-Package: de.ubt.ai1.supermod.service.file.client,
+ de.ubt.ai1.supermod.service.file.pure.client,
+ de.ubt.ai1.supermod.service.file.pure.client.impl

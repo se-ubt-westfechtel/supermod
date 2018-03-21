@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Revision/Logical Version Space Client Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.revlog.client;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.ubt.ai1.supermod.service.logical,
+ de.ubt.ai1.supermod.service.revision,
+ de.ubt.ai1.supermod.mm.logical,
+ de.ubt.ai1.supermod.mm.revision,
+ de.ubt.ai1.supermod.mm.change,
+ de.ubt.ai1.supermod.service.change,
+ com.google.inject,
+ de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.mm.diff,
+ de.ubt.ai1.supermod.mm.client
+Export-Package: de.ubt.ai1.supermod.service.revlog.client

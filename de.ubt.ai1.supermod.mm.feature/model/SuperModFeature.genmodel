@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.feature/src" editDirectory="/de.ubt.ai1.supermod.edit.feature/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.feature/src" modelPluginID="de.ubt.ai1.supermod.mm.feature"
+    modelName="SuperModFeature" editPluginClass="de.ubt.ai1.supermod.edit.feature.provider.SuperModFeatureEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.feature.presentation.SuperModFeatureEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" providerRootExtendsClass="" editPluginID="de.ubt.ai1.supermod.edit.feature"
+    editorPluginID="de.ubt.ai1.supermod.editor.feature" usedGenPackages="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModFeature.ecore</foreignModel>
+  <genPackages prefix="SuperModFeature" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      multipleEditorPages="false" ecorePackage="SuperModFeature.ecore#/">
+    <genClasses ecoreClass="SuperModFeature.ecore#//FeatureModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureModel/roots"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureModel/features"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeature.ecore#//Feature">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/featureModel"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/featureOption"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/names"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/children"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/parents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/groups"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/groupedBy"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/incomingDependencies"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/outgoingDependencies"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/mandatory"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/eliminations"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/incomingRoots"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Feature/allChildFeatures"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeature.ecore#//DisplayName">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModFeature.ecore#//DisplayName/displayName"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//DisplayName/feature"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModFeature.ecore#//FeatureGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureGroup/groupedFeatures"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureGroup/groupInvariant"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureGroup/parentFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeature.ecore#//GroupMembership">
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//GroupMembership/groupedFeature"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//GroupMembership/group"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModFeature.ecore#//OrFeatureGroup"/>
+    <genClasses image="false" ecoreClass="SuperModFeature.ecore#//XorFeatureGroup"/>
+    <genClasses image="false" ecoreClass="SuperModFeature.ecore#//FeatureDependency">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureDependency/dependencyInvariant"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureDependency/sourceFeature"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//FeatureDependency/targetFeature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeature.ecore#//FeatureRequirement"/>
+    <genClasses ecoreClass="SuperModFeature.ecore#//FeatureExclusion"/>
+    <genClasses ecoreClass="SuperModFeature.ecore#//RootRelationship">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//RootRelationship/rootInvariant"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//RootRelationship/rootDefault"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//RootRelationship/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeature.ecore#//ChildRelationship">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//ChildRelationship/parent"/>
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//ChildRelationship/child"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//ChildRelationship/parentInvariant"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//ChildRelationship/parentPreference"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeature.ecore#//Mandatory">
+      <genFeatures property="None" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModFeature.ecore#//Mandatory/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModFeature.ecore#//Elimination">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Elimination/feature"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModFeature.ecore#//Elimination/defaultSelection"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Elimination/eliminationInvariant"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModFeature.ecore#//Elimination/eliminationDefault"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

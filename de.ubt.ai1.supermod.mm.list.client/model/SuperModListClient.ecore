@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="client" nsURI="http://ai1.uni-bayreuth.de/supermod/list/client/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.list.client">
+  <eClassifiers xsi:type="ecore:EClass" name="OrderingConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextList" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.list/model/SuperModList.ecore#//VersionedList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lastVertex" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.list/model/SuperModList.ecore#//VersionedListVertex"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successorEdges" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.list/model/SuperModList.ecore#//VersionedListEdge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="successorVertices" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.list/model/SuperModList.ecore#//VersionedListVertex"/>
+  </eClassifiers>
+</ecore:EPackage>

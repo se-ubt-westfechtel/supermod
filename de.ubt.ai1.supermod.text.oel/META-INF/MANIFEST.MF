@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Option Language Text Representation
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-Version: 0.1.0.qualifier
+Bundle-SymbolicName: de.ubt.ai1.supermod.text.oel;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ de.ubt.ai1.supermod.mm.core,
+ org.apache.log4j,
+ org.apache.commons.logging,
+ org.eclipse.xtext,
+ org.eclipse.xtext.util,
+ org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib
+Export-Package: de.ubt.ai1.supermod.oel,
+ de.ubt.ai1.supermod.oel.formatting,
+ de.ubt.ai1.supermod.oel.scoping,
+ de.ubt.ai1.supermod.oel.serializer,
+ de.ubt.ai1.supermod.oel.services,
+ de.ubt.ai1.supermod.oel.parser.antlr,
+ de.ubt.ai1.supermod.oel.parser.antlr.internal
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.apache.log4j,
+ org.eclipse.xtext.xbase.lib

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.emffile/src" editDirectory="/de.ubt.ai1.supermod.edit.emffile/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.emffile/src" modelPluginID="de.ubt.ai1.supermod.mm.emffile"
+    modelName="SuperModEMFFile" editPluginClass="de.ubt.ai1.supermod.edit.emffile.provider.SuperModEMFFileEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.emffile.presentation.SuperModEMFFileEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" providerRootExtendsClass="de.ubt.ai1.supermod.edit.core.provider.ColumnOneItemProviderAdapter"
+    editPluginID="de.ubt.ai1.supermod.edit.emffile" editorPluginID="de.ubt.ai1.supermod.editor.emffile"
+    tableProviders="true" colorProviders="true" fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core ../../de.ubt.ai1.supermod.mm.file/model/SuperModFile.genmodel#//file ../../de.ubt.ai1.supermod.mm.list/model/SuperModList.genmodel#//list"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModEMFFile.ecore</foreignModel>
+  <genPackages prefix="SuperModEMFFile" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      multipleEditorPages="false" contentTypeIdentifier="" ecorePackage="SuperModEMFFile.ecore#/">
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFFileContent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFFileContent/objects"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFFileContent/roots"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFFileContent/metaLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFObject/uuid"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFObject/classRefs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFObject/featureRefs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFObject/targetingRefVals"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFObject/targetingContainmentRefVals"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFClassRef"/>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFInternalClassRefProxy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFInternalClassRefProxy/referencedClassObjectUuid"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFInternalClassRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFInternalClassRef/referencedClassObject"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFExternalClassRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFExternalClassRef/packageUri"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFExternalClassRef/className"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFFeatureRef">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFFeatureRef/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFFeatureRef/valueOrdering"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFInternalFeatureRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFInternalFeatureRef/referencedFeatureObject"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFExternalFeatureRef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFExternalFeatureRef/featureName"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFInternalFeatureRefProxy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFInternalFeatureRefProxy/referencedFeatureObjectUuid"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFValue"/>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFAttributeValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFAttributeValue/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFInternalReferenceValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModEMFFile.ecore#//EMFInternalReferenceValue/referencedObject"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFInternalReferenceProxy">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFInternalReferenceProxy/referencedObjectUuid"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFExternalReferenceValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModEMFFile.ecore#//EMFExternalReferenceValue/eObjectUri"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFContainmentReferenceValue"/>
+    <genClasses ecoreClass="SuperModEMFFile.ecore#//EMFContainmentReferenceProxy"/>
+  </genPackages>
+</genmodel:GenModel>

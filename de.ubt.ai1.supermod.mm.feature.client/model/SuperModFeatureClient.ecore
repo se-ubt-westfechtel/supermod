@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="client" nsURI="http://ai1.uni-bayreuth.de/supermod/feature/client/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.feature.client">
+  <eClassifiers xsi:type="ecore:EClass" name="RootFeatureConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextModel" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//FeatureModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParentFeatureConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextFeature" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CyclicFeatureTreeConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedFeatures" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DisplayNameConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextFeature" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultipleGroupMembershipConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextFeature" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoteGroupMembershipConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextFeature" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NonOptionalGroupedFeatureConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextFeature" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DependencyLinkTargetConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextDependency" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//FeatureDependency"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DanglingFeatureConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextFeature" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DanglingGroupConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextGroup" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//FeatureGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DanglingDependencyConflict" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductConflict">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextDependency" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//FeatureDependency"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVersionFeatureModelDescriptor"
+      eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//SingleVersionProductDimensionDescriptor">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureModel" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//FeatureModel"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureModel" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//FeatureModel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionBinding" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionBinding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureModelExportTrace" eSuperTypes="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.ecore#//ProductDimensionExportTrace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureToFeatureMap" upperBound="-1"
+        eType="#//FeatureToFeatureMapEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureToFeatureMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.feature/model/SuperModFeature.ecore#//Feature"/>
+  </eClassifiers>
+</ecore:EPackage>

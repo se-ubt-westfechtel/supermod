@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project default="cleanup" name="build">
+	<target name="cleanup">
+		<delete>
+			<fileset dir="lib" includes="de.ubt.ai1.**"/>
+		</delete>
+		<move todir="lib">
+			<fileset dir="lib\supermod\plugins">
+				<include name="**/*"/>
+			</fileset>
+		</move>
+		<delete dir="lib\supermod" quiet="true"/>
+	</target>
+</project>

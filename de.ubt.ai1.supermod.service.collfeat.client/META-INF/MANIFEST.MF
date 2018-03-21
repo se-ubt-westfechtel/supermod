@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Collab/Feature Version Space Client Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.collfeat.client
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.ubt.ai1.supermod.service.change,
+ com.google.inject,
+ de.ubt.ai1.supermod.service.feature,
+ de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.mm.client,
+ de.ubt.ai1.supermod.mm.change,
+ de.ubt.ai1.supermod.mm.feature,
+ de.ubt.ai1.supermod.service.feature.client,
+ de.ubt.ai1.supermod.mm.feature.client,
+ de.ubt.ai1.supermod.service.collab,
+ de.ubt.ai1.supermod.mm.collab,
+ de.ubt.ai1.supermod.service,
+ org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.ui,
+ de.ubt.ai1.supermod.mm.diff,
+ de.ubt.ai1.supermod.service.collab.client,
+ org.eclipse.core.resources
+Export-Package: de.ubt.ai1.supermod.service.collfeat.client

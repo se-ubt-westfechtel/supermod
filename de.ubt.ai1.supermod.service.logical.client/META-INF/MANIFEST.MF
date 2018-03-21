@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Logical Version Dimension Client Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.logical.client
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: de.ubt.ai1.supermod.service.client,
+ org.eclipse.ui.ide,
+ de.ubt.ai1.supermod.mm.logical,
+ org.eclipse.core.resources,
+ de.ubt.ai1.supermod.util.emf,
+ org.eclipse.emf.edit.ui,
+ de.ubt.ai1.supermod.edit.core,
+ com.google.inject,
+ de.ubt.ai1.supermod.service.logical,
+ org.eclipse.core.runtime,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.mm.client
+Export-Package: de.ubt.ai1.supermod.service.logical.client,
+ de.ubt.ai1.supermod.service.logical.client.impl,
+ de.ubt.ai1.supermod.service.logical.client.pure

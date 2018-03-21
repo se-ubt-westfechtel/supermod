@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.ubt.ai1.supermod.feature.collfeat"
+      label="SuperMod Revision+Feature Collaborative Version Model"
+      version="0.1.0.qualifier"
+      provider-name="http://ai1.uni-bayreuth.de"
+      license-feature="org.eclipse.emf">
+
+   <description url="http://www.example.com/description">
+      This plug-in contains a SuperMod version model which consists
+of three version dimensons:
+* a directed acyclic revision graph that controls collaborative temporal evolution,
+* a feature model variant management,
+* a change dimension which is hidden from the user and automatically
+manages the integration of the two dimensions above.
+The primary product space, an Eclipse project, is versioned by
+both the revision graph and the feature model. In addition, the
+evolution of the feature model itself is controlled
+by the revision graph.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2014 Chair for Applied Computer Science I, University
+of Bayreuth. All rights reserved. This program and the accompanying
+materials are made available under the terms of the Eclipse Public
+License v1.0 which accompanies this distribution, and is available
+at http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="SuperMod Update Site" url="http://btn1x4.inf.uni-bayreuth.de/supermod/update"/>
+   </url>
+
+   <includes
+         id="de.ubt.ai1.supermod.feature.core"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="de.ubt.ai1.supermod.mm.core"/>
+      <import plugin="com.google.inject"/>
+      <import plugin="de.ubt.ai1.supermod.service"/>
+      <import plugin="de.ubt.ai1.supermod.service.client"/>
+      <import plugin="de.ubt.ai1.supermod.mm.diff"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="de.ubt.ai1.supermod.edit.core"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="de.ubt.ai1.supermod.mm.client"/>
+      <import plugin="de.ubt.ai1.supermod.edit.client"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.emf.validation"/>
+      <import plugin="de.ubt.ai1.supermod.module.client"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="de.ubt.ai1.supermod.util.emf"/>
+      <import plugin="de.ubt.ai1.supermod.service.file.client"/>
+      <import plugin="org.eclipse.emf.common.ui"/>
+      <import plugin="de.ubt.ai1.supermod.service.logical.client"/>
+      <import plugin="de.ubt.ai1.supermod.service.file"/>
+      <import plugin="de.ubt.ai1.supermod.mm.file"/>
+      <import plugin="de.ubt.ai1.supermod.mm.file.client"/>
+      <import plugin="de.ubt.ai1.supermod.service.list"/>
+      <import plugin="de.ubt.ai1.supermod.service.emffile"/>
+      <import plugin="de.ubt.ai1.supermod.service.hetfile"/>
+      <import plugin="de.ubt.ai1.supermod.service.textfile"/>
+      <import plugin="de.ubt.ai1.supermod.service.list.client"/>
+      <import plugin="de.ubt.ai1.supermod.service.emffile.client"/>
+      <import plugin="de.ubt.ai1.supermod.service.textfile.client"/>
+      <import plugin="de.ubt.ai1.supermod.service.hetfile.client"/>
+      <import plugin="org.eclipse.ui"/>
+   </requires>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.change"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.change"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.change.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.feature"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.feature.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.editor.feature"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.feature"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.feature.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.feature"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.feature.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.collab"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.collab"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.collab"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.collab.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.featfile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.featfile.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.module.hetfile.collfeat.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.collfeat"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.collfeat.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Service Interfaces
+Bundle-SymbolicName: de.ubt.ai1.supermod.service;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: com.google.inject,
+ de.ubt.ai1.supermod.mm.diff,
+ de.ubt.ai1.supermod.util.emf,
+ de.ubt.ai1.supermod.mm.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.service.exceptions,
+ de.ubt.ai1.supermod.service.generic,
+ de.ubt.ai1.supermod.service.generic.impl
+Bundle-Vendor: http://ai1.uni-bayreuth.de

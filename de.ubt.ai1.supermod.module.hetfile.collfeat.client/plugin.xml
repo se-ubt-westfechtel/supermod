@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.ubt.ai1.supermod.module.client.injectorProvider">
+      <moduleProvider
+            description="A heterogeneous file system (EMF, text, XML) versioned by a feature model and a collaborative revision graph. The feature model is additionally versioned by the revision graph. Both version dimensions are mapped by a change space."
+            moduleId="de.ubt.ai1.supermod.hetfile.collfeat"
+            moduleProviderClass="de.ubt.ai1.supermod.module.hetfile.collfeat.client.HetfileCollfeatClientModuleInjectorProvider"
+            remote="true">
+      </moduleProvider>
+   </extension>
+
+</plugin>

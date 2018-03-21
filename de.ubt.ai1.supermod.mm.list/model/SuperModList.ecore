@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="list" nsURI="http://ai1.uni-bayreuth.de/supermod/list/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.list">
+  <eClassifiers xsi:type="ecore:EClass" name="VersionedList" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement">
+    <eOperations name="getAllOccurrencesOf" upperBound="-1" eType="#//VersionedListVertex">
+      <eParameters name="element" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement"/>
+    </eOperations>
+    <eOperations name="linearize" upperBound="-1" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement"/>
+    <eOperations name="getEdge" eType="#//VersionedListEdge">
+      <eParameters name="from" eType="#//VersionedListVertex"/>
+      <eParameters name="to" eType="#//VersionedListVertex"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertices" upperBound="-1"
+        eType="#//VersionedListVertex" containment="true" eOpposite="#//VersionedListVertex/list"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//VersionedListEdge" containment="true" eOpposite="#//VersionedListEdge/list"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startVertices" upperBound="-1"
+        eType="#//VersionedListStartReference" containment="true" eOpposite="#//VersionedListStartReference/list"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionedListVertex" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingEdges" upperBound="-1"
+        eType="#//VersionedListEdge" eOpposite="#//VersionedListEdge/sink"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingEdges" upperBound="-1"
+        eType="#//VersionedListEdge" eOpposite="#//VersionedListEdge/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//VersionedList"
+        eOpposite="#//VersionedList/vertices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startRef" eType="#//VersionedListStartReference"
+        eOpposite="#//VersionedListStartReference/vertex"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionedListEdge" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//VersionedListVertex"
+        eOpposite="#//VersionedListVertex/outgoingEdges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sink" eType="#//VersionedListVertex"
+        eOpposite="#//VersionedListVertex/incomingEdges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//VersionedList"
+        eOpposite="#//VersionedList/edges"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionedListStartReference" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vertex" eType="#//VersionedListVertex"
+        eOpposite="#//VersionedListVertex/startRef"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//VersionedList"
+        eOpposite="#//VersionedList/startVertices"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Logical Version Dimension Text Representation UI
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-Version: 0.1.0.qualifier
+Bundle-SymbolicName: de.ubt.ai1.supermod.text.logical.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: de.ubt.ai1.supermod.text.logical;visibility:=reexport,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.builder,
+ de.ubt.ai1.supermod.text.oel,
+ org.apache.log4j,
+ org.eclipse.ui.editors,
+ org.eclipse.ui,
+ org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: de.ubt.ai1.supermod.text.ui.internal.LogicalActivator
+Export-Package: de.ubt.ai1.supermod.text.ui.contentassist.antlr,
+ de.ubt.ai1.supermod.text.ui.contentassist.antlr.internal
+Import-Package: org.eclipse.xtext.xbase.lib

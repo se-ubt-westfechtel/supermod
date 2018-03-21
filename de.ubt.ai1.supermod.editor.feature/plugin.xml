@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ Copyright (c) 2014 Chair for Applied Computer Science I, University of 
+ Bayreuth. All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SuperModFeature -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="de.ubt.ai1.supermod.mm.feature.presentation.SuperModFeatureModelWizardID"
+            name="%_UI_SuperModFeatureModelWizard_label"
+            class="de.ubt.ai1.supermod.mm.feature.presentation.SuperModFeatureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SuperModFeatureModelFile.gif">
+         <description>%_UI_SuperModFeatureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SuperModFeature -->
+      <editor
+            id="de.ubt.ai1.supermod.mm.feature.presentation.SuperModFeatureEditorID"
+            name="%_UI_SuperModFeatureEditor_label"
+            icon="icons/full/obj16/SuperModFeatureModelFile.gif"
+            extensions="supermodfeature"
+            class="de.ubt.ai1.supermod.mm.feature.presentation.SuperModFeatureEditor"
+            contributorClass="de.ubt.ai1.supermod.mm.feature.presentation.SuperModFeatureActionBarContributor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="de.ubt.ai1.supermod.editor.feature.validation.category"
+            mandatory="true"
+            name="SuperMod">
+      </category>
+      <constraintProvider
+            cache="true"
+            mode="Batch">
+         <package
+               namespaceUri="http://ai1.uni-bayreuth.de/supermod/feature/0.1.0">
+         </package>
+         <constraints
+               categories="de.ubt.ai1.supermod.editor.feature.validation.category">
+            <constraint
+                  class="de.ubt.ai1.supermod.mm.feature.validation.FeatureModelConsistencyConstraint"
+                  id="de.ubt.ai1.supermod.editor.feature.constraints.fmConsistency"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Feature Model Consistency"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  The feature model is not satisfiable by any valid feature configuration.
+               </message>
+               <description>
+                  There must be at least one feature configuration that satisfies all constraints imposed by the feature model's semantics.
+               </description>
+            </constraint>
+            <constraint
+                  class="de.ubt.ai1.supermod.mm.feature.validation.MandatoryRootConstraint"
+                  id="de.ubt.ai1.supermod.editor.feature.constraints.mandatoryRoot"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Mandatory Root Feature"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  The root feature {0} is not mandatory.
+               </message>
+               <description>
+                  A feature model must contain a mandatory root feature.
+               </description>
+            </constraint>
+            <constraint
+                  class="de.ubt.ai1.supermod.mm.feature.validation.NonContradictingDependenciesConstraint"
+                  id="de.ubt.ai1.supermod.editor.feature.constraints.nonContDep"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non-Contradicting Feature Dependencies"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  The specified requires/excludes relationships of the feature {0} disagree.
+               </message>
+               <description>
+                  When applying the transitive closure, the set of features targeted by the context feature&apos;s requires and excludes relationships must be disjoint.
+               </description>
+            </constraint>
+            <constraint
+                  class="de.ubt.ai1.supermod.mm.feature.validation.NonObsoleteFeatureConstraint"
+                  id="de.ubt.ai1.supermod.editor.feature.constraints.nonObsFeature"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Non-Obsolete Optional Feature"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  There is no valid feature configuration where the feature {0} is active.
+               </message>
+               <description>
+                  When binding the feature to a positive selection state, the feature model becomes unsatisfiable. This may be due to contradicting constraints.
+               </description>
+            </constraint>
+            <constraint
+                  class="de.ubt.ai1.supermod.mm.feature.validation.ActuallyOptionalFeatureConstraint"
+                  id="de.ubt.ai1.supermod.editor.feature.constraints.actOptFeature"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Actually Optional Feature"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  There is no valid feature configuration where the feature {0} is inactive.
+               </message>
+               <description>
+                  When binding the feature to a negative selection state, the feature model becomes unsatisfiable. This may be due to contradicting constraints.
+               </description>
+            </constraint>
+            <constraint
+                  class="de.ubt.ai1.supermod.mm.feature.validation.OptionalGroupMembersConstraint"
+                  id="de.ubt.ai1.supermod.editor.feature.constraints.optionalGroupMemb"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Optional Group Membership"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  The mandatory feature {0} is located in a feature group.
+               </message>
+               <description>
+                  Feature groups should contain only optional features.
+               </description>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.startup">
+      <startup
+            class="de.ubt.ai1.supermod.mm.feature.validation.FeatureModelValidationStartup">
+      </startup>
+   </extension>
+
+</plugin>

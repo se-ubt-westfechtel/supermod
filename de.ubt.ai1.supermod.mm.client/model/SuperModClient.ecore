@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="client" nsURI="http://ai1.uni-bayreuth.de/supermod/client/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.client">
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVersionProductSpaceDescriptor">
+    <eOperations name="isModified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="setModified">
+      <eParameters name="modified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensionDescriptors" upperBound="-1"
+        eType="#//SingleVersionProductDimensionDescriptor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleVersionProductDimensionDescriptor"
+      abstract="true">
+    <eOperations name="isModified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="setModified">
+      <eParameters name="modified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimensionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalRepository" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Repository">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localDescriptor" eType="#//SingleVersionProductSpaceDescriptor"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localChoice" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionBinding"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localAmbition" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionBinding"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteUser" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="locallyModified" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="readTransactionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="writeTransactionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductSpaceExportTrace">
+    <eOperations name="getTraceForDimension" eType="#//ProductDimensionExportTrace">
+      <eParameters name="dimension" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductDimension"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productSpace" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensionTraces" upperBound="-1"
+        eType="#//ProductDimensionExportTrace" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductDimensionExportTrace" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productDimension" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductDimension"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConflictSet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflicts" upperBound="-1"
+        eType="#//ProductConflict" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductConflict" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedProductSpaceElements"
+        upperBound="-1" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductSpaceElement"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="#//Severity"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Severity">
+    <eLiterals name="info" literal="info"/>
+    <eLiterals name="warning" value="1"/>
+    <eLiterals name="error" value="2"/>
+    <eLiterals name="fatal" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

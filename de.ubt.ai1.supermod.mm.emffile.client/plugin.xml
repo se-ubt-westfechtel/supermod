@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SuperModEMFFileClient -->
+      <package
+            uri="http://ai1.uni-bayreuth.de/supermod/emffile/client/0.1.0"
+            class="de.ubt.ai1.supermod.mm.emffile.client.SuperModEMFFileClientPackage"
+            genModel="model/SuperModEMFFileClient.genmodel"/>
+   </extension>
+
+</plugin>

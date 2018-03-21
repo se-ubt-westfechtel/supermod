@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod EMF File Product Space Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.emffile;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Export-Package: de.ubt.ai1.supermod.service.emffile
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Require-Bundle: de.ubt.ai1.supermod.mm.emffile,
+ de.ubt.ai1.supermod.mm.diff,
+ com.google.inject,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.service.file,
+ de.ubt.ai1.supermod.service.list
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

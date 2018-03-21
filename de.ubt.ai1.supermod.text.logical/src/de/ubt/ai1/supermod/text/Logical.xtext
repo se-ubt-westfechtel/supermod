@@ -1,0 +1,46 @@
+/******************************************************************************
+ * Copyright (c) 2014 Chair for Applied Computer Science I, University of 
+ * Bayreuth. All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html 
+ *****************************************************************************/
+ 
+grammar de.ubt.ai1.supermod.text.Logical with de.ubt.ai1.supermod.oel.OptionLang
+
+import "http://ai1.uni-bayreuth.de/supermod/logical/0.1.0" as logical
+import "http://ai1.uni-bayreuth.de/supermod/core/0.1.0" as core
+
+LogicalDimension returns logical::LogicalDimension:
+	{logical::LogicalDimension}
+	'logical' 'dimension' dimensionName=ID
+	'{'
+		(logicalOptions+=Option |
+		logicalInvariants+=Invariant |
+		logicalPreferences+=Preference |
+		logicalDefaults+=DefaultBinding)*
+	'}';
+
+Option returns core::Option:
+	'option' name=ID
+;
+
+Invariant returns core::Invariant:
+	'invariant' name=ID '{'
+		optionExpr=OptionExpr
+	'}'
+;
+
+Preference returns core::Preference:
+	'preference' name=ID 'for' option=[core::Option|ID] '{'
+		optionExpr=OptionExpr
+	'}'
+;
+
+DefaultBinding returns core::DefaultBinding:
+	'default' 'binding' name=ID 'for' option=[core::Option|ID] '=' state=Tristate
+;
+
+enum Tristate returns core::Tristate:
+	unknown='unknown' | ^true='true' | ^false='false'
+;

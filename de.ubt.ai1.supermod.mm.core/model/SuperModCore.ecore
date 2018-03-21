@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core" nsURI="http://ai1.uni-bayreuth.de/supermod/core/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.core">
+  <eClassifiers xsi:type="ecore:EClass" name="Repository">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productSpace" eType="#//ProductSpace"
+        containment="true" eOpposite="#//ProductSpace/repository"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionSpace" eType="#//VersionSpace"
+        containment="true" eOpposite="#//VersionSpace/repository"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibilityForest" eType="#//VisibilityForest"
+        eOpposite="#//VisibilityForest/repository"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="moduleId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dimension" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dimensionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootElements" upperBound="-1"
+        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allElements" upperBound="-1"
+        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eOperations name="isProxy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superElement" eType="#//Element"
+        changeable="false" volatile="true" transient="true" derived="true" eOpposite="#//Element/subElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subElements" upperBound="-1"
+        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Element/superElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSuperElements" upperBound="-1"
+        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Element/allSubElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSubElements" upperBound="-1"
+        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Element/allSuperElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencedElements"
+        upperBound="-1" eType="#//Element" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//Element/crossReferencingElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencingElements"
+        upperBound="-1" eType="#//Element" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//Element/crossReferencedElements"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="proxyUUID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UUIDElement" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductSpace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensions" upperBound="-1"
+        eType="#//ProductDimension" eOpposite="#//ProductDimension/productSpace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//Repository"
+        eOpposite="#//Repository/productSpace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductDimension" abstract="true" eSuperTypes="#//Dimension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootProductSpaceElements"
+        upperBound="-1" eType="#//ProductSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allProductSpaceElements"
+        upperBound="-1" eType="#//ProductSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//ProductSpaceElement/productDimension"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productSpace" eType="#//ProductSpace"
+        eOpposite="#//ProductSpace/dimensions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductSpaceElement" abstract="true"
+      eSuperTypes="#//Element">
+    <eOperations name="isVisible" eType="#//Tristate">
+      <eParameters name="binding" eType="#//OptionBinding"/>
+      <eParameters name="cache" eType="#//VisibilityEvaluationCache"/>
+    </eOperations>
+    <eOperations name="isVisibleHierarchically" eType="#//Tristate">
+      <eParameters name="binding" eType="#//OptionBinding"/>
+      <eParameters name="cache" eType="#//VisibilityEvaluationCache"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productDimension" eType="#//ProductDimension"
+        changeable="false" volatile="true" transient="true" derived="true" eOpposite="#//ProductDimension/allProductSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productSpace" eType="#//ProductSpace"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" eType="#//OptionExpr"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superProductSpaceElement"
+        eType="#//ProductSpaceElement" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//ProductSpaceElement/subProductSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subProductSpaceElements"
+        upperBound="-1" eType="#//ProductSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//ProductSpaceElement/superProductSpaceElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSuperProductSpaceElements"
+        upperBound="-1" eType="#//ProductSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//ProductSpaceElement/allSubProductSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSubProductSpaceElements"
+        upperBound="-1" eType="#//ProductSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//ProductSpaceElement/allSuperProductSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencedProductSpaceElements"
+        upperBound="-1" eType="#//ProductSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//ProductSpaceElement/crossReferencingProductSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencingProductSpaceElements"
+        upperBound="-1" eType="#//ProductSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//ProductSpaceElement/crossReferencedProductSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hierarchicalVisibility"
+        eType="#//OptionExpr" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superordinateVisibility"
+        eType="#//OptionExpr" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionSpace">
+    <eOperations name="validate" eType="#//Tristate">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="isComplete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="isSatisfiable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="premise" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="applyAllPreferences" eType="#//OptionBinding">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="applyAllDefaults" eType="#//OptionBinding">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="applyAllCompletions" eType="#//OptionBinding">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="getOption" eType="#//Option">
+      <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensions" upperBound="-1"
+        eType="#//VersionDimension"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allOptions" upperBound="-1"
+        eType="#//Option" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allInvariants" upperBound="-1"
+        eType="#//Invariant" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allPreferences" upperBound="-1"
+        eType="#//Preference" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allDefaultBindings" upperBound="-1"
+        eType="#//DefaultBinding" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//Repository"
+        eOpposite="#//Repository/versionSpace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionDimension" abstract="true" eSuperTypes="#//Dimension">
+    <eOperations name="validate" eType="#//Tristate">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="isComplete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="isSatisfiable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="premise" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="applyPreferences" eType="#//OptionBinding">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="applyDefaults" eType="#//OptionBinding">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="applyCompletions" eType="#//OptionBinding">
+      <eParameters name="optionBinding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="getOption" eType="#//Option">
+      <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="options" upperBound="-1"
+        eType="#//Option" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="invariants" upperBound="-1"
+        eType="#//Invariant" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preferences" upperBound="-1"
+        eType="#//Preference" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultBindings" upperBound="-1"
+        eType="#//DefaultBinding" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootVersionSpaceElements"
+        upperBound="-1" eType="#//VersionSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allVersionSpaceElements"
+        upperBound="-1" eType="#//VersionSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionSpace" eType="#//VersionSpace"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionSpaceElement" abstract="true"
+      eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionDimension" eType="#//VersionDimension"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versionSpace" eType="#//VersionSpace"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superVersionSpaceElement"
+        eType="#//VersionSpaceElement" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//VersionSpaceElement/subVersionSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subVersionSpaceElements"
+        upperBound="-1" eType="#//VersionSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//VersionSpaceElement/superVersionSpaceElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSuperVersionSpaceElements"
+        upperBound="-1" eType="#//VersionSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//VersionSpaceElement/allSubVersionSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSubVersionSpaceElements"
+        upperBound="-1" eType="#//VersionSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//VersionSpaceElement/allSuperVersionSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencedVersionSpaceElements"
+        upperBound="-1" eType="#//VersionSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//VersionSpaceElement/crossReferencingVersionSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencingVersionSpaceElements"
+        upperBound="-1" eType="#//VersionSpaceElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//VersionSpaceElement/crossReferencedVersionSpaceElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowLevelConcepts" upperBound="-1"
+        eType="#//RuleBaseElement" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//RuleBaseElement/highLevelConcept"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleBaseElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" eType="#//VersionDimension"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="highLevelConcept" eType="#//VersionSpaceElement"
+        changeable="false" volatile="true" transient="true" derived="true" eOpposite="#//VersionSpaceElement/lowLevelConcepts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Invariant" eSuperTypes="#//RuleBaseElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionExpr" eType="#//OptionExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Preference" eSuperTypes="#//RuleBaseElement">
+    <eOperations name="toImplicationInvariant" eType="#//Invariant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="#//Option"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="optionExpr" eType="#//OptionExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefaultBinding" eSuperTypes="#//RuleBaseElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="#//Option"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//Tristate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Option" eSuperTypes="#//RuleBaseElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionBinding">
+    <eOperations name="getState" eType="#//Tristate">
+      <eParameters name="option" eType="#//Option"/>
+    </eOperations>
+    <eOperations name="implies" eType="#//Tristate">
+      <eParameters name="other" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="toVisibility" eType="#//OptionExpr"/>
+    <eOperations name="bind">
+      <eParameters name="option" eType="#//Option"/>
+      <eParameters name="state" eType="#//Tristate"/>
+    </eOperations>
+    <eOperations name="combine" eType="#//OptionBinding">
+      <eParameters name="other" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="clear"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundOptions" upperBound="-1"
+        eType="#//OptionToTristateMapEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfBindings" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true" defaultValueLiteral="0"
+        derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionToTristateMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//Option"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//Tristate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisibilityEvaluationCache">
+    <eOperations name="invalidate"/>
+    <eOperations name="save">
+      <eParameters name="optionExpr" eType="#//OptionExpr"/>
+      <eParameters name="result" eType="#//Tristate"/>
+    </eOperations>
+    <eOperations name="get" eType="#//Tristate">
+      <eParameters name="expr" eType="#//OptionExpr"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entries" upperBound="-1"
+        eType="#//OptionExprToTristateMapEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionExprToTristateMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="#//OptionExpr"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//Tristate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HybridDimension" abstract="true" eSuperTypes="#//VersionDimension #//ProductDimension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootHybridElements" upperBound="-1"
+        eType="#//HybridElement" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allHybridElements" upperBound="-1"
+        eType="#//HybridElement" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HybridElement" abstract="true" eSuperTypes="#//ProductSpaceElement #//VersionSpaceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superHybridElement" eType="#//HybridElement"
+        changeable="false" volatile="true" transient="true" derived="true" eOpposite="#//HybridElement/subHybridElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subHybridElements" upperBound="-1"
+        eType="#//HybridElement" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//HybridElement/superHybridElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSuperHybridElements"
+        upperBound="-1" eType="#//HybridElement" changeable="false" volatile="true"
+        transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allSubHybridElements" upperBound="-1"
+        eType="#//HybridElement" changeable="false" volatile="true" transient="true"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencedHybridElements"
+        upperBound="-1" eType="#//HybridElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//HybridElement/crossReferencingHybridElements"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="crossReferencingHybridElements"
+        upperBound="-1" eType="#//HybridElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//HybridElement/crossReferencedHybridElements"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisibilityForest" eSuperTypes="#//Dimension">
+    <eOperations name="add" eType="#//Visibility">
+      <eParameters name="expr" eType="#//OptionExpr"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibilities" upperBound="-1"
+        eType="#//Visibility" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//Repository"
+        eOpposite="#//Repository/visibilityForest"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Visibility" eSuperTypes="#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//OptionExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tristate">
+    <eLiterals name="unknown"/>
+    <eLiterals name="true" value="1"/>
+    <eLiterals name="false" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionExpr" abstract="true">
+    <eOperations name="apply" eType="#//Tristate">
+      <eParameters name="binding" eType="#//OptionBinding"/>
+      <eParameters name="cache" eType="#//VisibilityEvaluationCache"/>
+    </eOperations>
+    <eOperations name="apply" eType="#//Tristate">
+      <eParameters name="binding" eType="#//OptionBinding"/>
+    </eOperations>
+    <eOperations name="not" eType="#//NegExpr"/>
+    <eOperations name="and" eType="#//AndExpr">
+      <eParameters name="other" eType="#//OptionExpr"/>
+    </eOperations>
+    <eOperations name="or" eType="#//OrExpr">
+      <eParameters name="other" eType="#//OptionExpr"/>
+    </eOperations>
+    <eOperations name="xor" eType="#//XorExpr">
+      <eParameters name="other" eType="#//OptionExpr"/>
+    </eOperations>
+    <eOperations name="implies" eType="#//ImpliesExpr">
+      <eParameters name="other" eType="#//OptionExpr"/>
+    </eOperations>
+    <eOperations name="iff" eType="#//BiconditionalExpr">
+      <eParameters name="other" eType="#//OptionExpr"/>
+    </eOperations>
+    <eOperations name="nand" eType="#//NandExpr">
+      <eParameters name="other" eType="#//OptionExpr"/>
+    </eOperations>
+    <eOperations name="minus" eType="#//MinusExpr">
+      <eParameters name="other" eType="#//OptionExpr"/>
+    </eOperations>
+    <eOperations name="extract" eType="#//OptionExpr"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedOptions" upperBound="-1"
+        eType="#//Option" changeable="false" volatile="true" transient="true" derived="true"
+        resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedDimensions" upperBound="-1"
+        eType="#//VersionDimension" changeable="false" volatile="true" transient="true"
+        derived="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisibilityRef" eSuperTypes="#//OptionExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="visibility" eType="#//Visibility"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionRef" eSuperTypes="#//OptionExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="option" eType="#//Option"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NegExpr" eSuperTypes="#//OptionExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="neg" eType="#//OptionExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryExpr" abstract="true" eSuperTypes="#//OptionExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//OptionExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//OptionExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExpr" eSuperTypes="#//BinaryExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrExpr" eSuperTypes="#//BinaryExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XorExpr" eSuperTypes="#//BinaryExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpliesExpr" eSuperTypes="#//BinaryExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BiconditionalExpr" eSuperTypes="#//BinaryExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NandExpr" eSuperTypes="#//BinaryExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MinusExpr" eSuperTypes="#//BinaryExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MergeExpr" eSuperTypes="#//BinaryExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseExpr" eType="#//OptionExpr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BigExpr" abstract="true" eSuperTypes="#//OptionExpr">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//OptionExpr" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BigAndExpr" eSuperTypes="#//BigExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BigOrExpr" eSuperTypes="#//BigExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BigXorExpr" eSuperTypes="#//BigExpr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BigNandExpr" eSuperTypes="#//BigExpr"/>
+</ecore:EPackage>

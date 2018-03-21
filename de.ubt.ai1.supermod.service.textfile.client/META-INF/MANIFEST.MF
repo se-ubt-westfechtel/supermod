@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Text File Product Dimension Client Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.textfile.client;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.core.resources,
+ de.ubt.ai1.supermod.service.file.client,
+ de.ubt.ai1.supermod.mm.textfile,
+ de.ubt.ai1.supermod.mm.file.client,
+ org.eclipse.core.runtime,
+ de.ubt.ai1.supermod.service.list,
+ de.ubt.ai1.supermod.service.list.client,
+ com.google.inject,
+ de.ubt.ai1.supermod.service.textfile,
+ de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.mm.textfile.client,
+ de.ubt.ai1.supermod.mm.list.client,
+ de.ubt.ai1.supermod.util.emf
+Export-Package: de.ubt.ai1.supermod.service.textfile.client

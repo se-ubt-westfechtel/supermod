@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="de.ubt.ai1.supermod.module" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appinfo>
+         <meta.schema plugin="de.ubt.ai1.supermod.module" id="de.ubt.ai1.supermod.module.injectorProvider" name="SuperMod Module Injector Provider"/>
+      </appinfo>
+      <documentation>
+         A SuperMod Module Injector Provider is a registered class which may be instantiated in order to define a set of Guice bindings for a specific product configuration of SuperMod.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appinfo>
+            <meta.element />
+         </appinfo>
+      </annotation>
+      <complexType>
+         <sequence>
+            <element ref="moduleProvider"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute translatable="true"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="moduleProvider">
+      <complexType>
+         <attribute name="moduleId" type="string" use="required">
+            <annotation>
+               <documentation>
+                  a unique identifier for the module
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string">
+            <annotation>
+               <documentation>
+                  A human-understandable description for the set of modules provided by the injector.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="moduleProviderClass" type="string" use="required">
+            <annotation>
+               <documentation>
+                  An implementation of this class must return a Guice module which contains a completely configured product configuration for the specifies SuperMod module.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":de.ubt.ai1.supermod.service.module.client.ISuperModClientModuleInjectorProvider"/>
+               </appinfo>
+            </annotation>
+         </attribute>
+         <attribute name="remote" type="boolean" use="required">
+            <annotation>
+               <documentation>
+                  whether repositories will be shared with a remote server. If set to true, &quot;push&quot; and &quot;pull&quot; operations will be offered.
+               </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appinfo>
+         <meta.section type="since"/>
+      </appinfo>
+      <documentation>
+         0.1.0
+      </documentation>
+   </annotation>
+
+
+
+
+   <annotation>
+      <appinfo>
+         <meta.section type="copyright"/>
+      </appinfo>
+      <documentation>
+         /******************************************************************************
+ * Copyright (c) 2014 Chair for Applied Computer Science I, University of 
+ * Bayreuth. All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html 
+ *****************************************************************************/
+      </documentation>
+   </annotation>
+
+</schema>

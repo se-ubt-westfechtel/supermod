@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.core/src" editDirectory="/de.ubt.ai1.supermod.edit.core/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.core/src" modelPluginID="de.ubt.ai1.supermod.mm.core"
+    modelName="SuperModCore" editPluginClass="de.ubt.ai1.supermod.edit.core.provider.SuperModCoreEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.core.presentation.SuperModCoreEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.ubt.ai1.supermod.edit.core"
+    editorPluginID="de.ubt.ai1.supermod.editor.core" tableProviders="true" colorProviders="true"
+    fontProviders="true" language="" operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModCore.ecore</foreignModel>
+  <genPackages prefix="SuperModCore" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      ecorePackage="SuperModCore.ecore#/" publicationLocation="">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SuperModCore.ecore#//Tristate">
+      <genEnumLiterals ecoreEnumLiteral="SuperModCore.ecore#//Tristate/unknown"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperModCore.ecore#//Tristate/true"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperModCore.ecore#//Tristate/false"/>
+    </genEnums>
+    <genClasses ecoreClass="SuperModCore.ecore#//Repository">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//Repository/productSpace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//Repository/versionSpace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//Repository/visibilityForest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//Repository/moduleId"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//Dimension">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//Dimension/dimensionName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Dimension/rootElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Dimension/allElements"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//Dimension/findElement">
+        <genParameters ecoreParameter="SuperModCore.ecore#//Dimension/findElement/fullyQualifiedName"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//Element">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//Element/qualifiedSubstring"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//Element/fullyQualifiedName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Element/superElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Element/subElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Element/allSuperElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Element/allSubElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Element/crossReferencedElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//Element/crossReferencingElements"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//Element/findSubElement">
+        <genParameters ecoreParameter="SuperModCore.ecore#//Element/findSubElement/qualifiedSubstring"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//UUIDElement">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//UUIDElement/uuid"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//ProductSpace">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpace/dimensions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpace/repository"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//ProductDimension">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductDimension/rootProductSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductDimension/allProductSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductDimension/productSpace"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//ProductSpaceElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/productDimension"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/productSpace"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/visibility"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/superProductSpaceElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/subProductSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/allSuperProductSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/allSubProductSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/crossReferencedProductSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/crossReferencingProductSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElement/hierarchicalVisibility"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//ProductSpaceElement/isVisible">
+        <genParameters ecoreParameter="SuperModCore.ecore#//ProductSpaceElement/isVisible/binding"/>
+        <genParameters ecoreParameter="SuperModCore.ecore#//ProductSpaceElement/isVisible/cache"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//ProductSpaceElement/isVisibleHierarchically">
+        <genParameters ecoreParameter="SuperModCore.ecore#//ProductSpaceElement/isVisibleHierarchically/binding"/>
+        <genParameters ecoreParameter="SuperModCore.ecore#//ProductSpaceElement/isVisibleHierarchically/cache"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//ProductSpaceProjection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceProjection/dimensionProjections"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//ProductDimensionProjection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//ProductDimensionProjection/dimensionName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductDimensionProjection/elementProjections"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//ProductSpaceElementProjection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//ProductSpaceElementProjection/qualifiedSubstring"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//ProductSpaceElementProjection/subElementProjections"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//VersionSpace">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpace/dimensions"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpace/allOptions"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpace/allInvariants"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpace/allPreferences"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpace/allDefaultBindings"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpace/repository"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionSpace/validate">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionSpace/validate/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionSpace/isComplete">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionSpace/isComplete/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionSpace/applyAllPreferences">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionSpace/applyAllPreferences/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionSpace/applyAllDefaults">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionSpace/applyAllDefaults/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionSpace/applyAllCompletions">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionSpace/applyAllCompletions/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionSpace/getOption">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionSpace/getOption/id"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//VersionDimension">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionDimension/options"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionDimension/invariants"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionDimension/preferences"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionDimension/defaultBindings"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionDimension/rootVersionSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionDimension/allVersionSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionDimension/versionSpace"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionDimension/validate">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionDimension/validate/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionDimension/isComplete">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionDimension/isComplete/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionDimension/applyPreferences">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionDimension/applyPreferences/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionDimension/applyDefaults">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionDimension/applyDefaults/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionDimension/applyCompletions">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionDimension/applyCompletions/optionBinding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VersionDimension/getOption">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VersionDimension/getOption/id"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//VersionSpaceElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/versionDimension"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/versionSpace"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/superVersionSpaceElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/subVersionSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/allSuperVersionSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/allSubVersionSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/crossReferencedVersionSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/crossReferencingVersionSpaceElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//VersionSpaceElement/lowLevelConcepts"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//RuleBaseElement">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//RuleBaseElement/id"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//RuleBaseElement/dimension"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//RuleBaseElement/highLevelConcept"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//Invariant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//Invariant/optionExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//Preference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//Preference/option"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//Preference/optionExpr"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//Preference/toImplicationInvariant"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//DefaultBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//DefaultBinding/option"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//DefaultBinding/state"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//Option"/>
+    <genClasses ecoreClass="SuperModCore.ecore#//OptionBinding">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//OptionBinding/boundOptions"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//OptionBinding/numberOfBindings"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionBinding/getState">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionBinding/getState/option"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionBinding/implies">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionBinding/implies/other"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionBinding/toVisibility"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionBinding/bind">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionBinding/bind/option"/>
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionBinding/bind/state"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//OptionToTristateMapEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//OptionToTristateMapEntry/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//OptionToTristateMapEntry/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//VisibilityEvaluationCache">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//VisibilityEvaluationCache/entries"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VisibilityEvaluationCache/invalidate"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VisibilityEvaluationCache/save">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VisibilityEvaluationCache/save/optionExpr"/>
+        <genParameters ecoreParameter="SuperModCore.ecore#//VisibilityEvaluationCache/save/result"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//VisibilityEvaluationCache/get">
+        <genParameters ecoreParameter="SuperModCore.ecore#//VisibilityEvaluationCache/get/expr"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//OptionExprToTristateMapEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//OptionExprToTristateMapEntry/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//OptionExprToTristateMapEntry/value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//HybridDimension">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridDimension/rootHybridElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridDimension/allHybridElements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//HybridElement">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridElement/superHybridElement"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridElement/subHybridElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridElement/allSuperHybridElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridElement/allSubHybridElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridElement/crossReferencedHybridElements"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//HybridElement/crossReferencingHybridElements"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//VisibilityForest">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//VisibilityForest/visibilities"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//OptionExpr">
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//OptionExpr/referencedOptions"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCore.ecore#//OptionExpr/referencedDimensions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCore.ecore#//OptionExpr/uuid"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/apply">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/apply/binding"/>
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/apply/cache"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/apply.1">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/apply.1/binding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/not"/>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/and">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/and/other"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/or">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/or/other"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/xor">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/xor/other"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/implies">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/implies/other"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/iff">
+        <genParameters ecoreParameter="SuperModCore.ecore#//OptionExpr/iff/other"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCore.ecore#//OptionExpr/extract"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//OptionExprRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//OptionExprRef/optionExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//OptionExprProxy"/>
+    <genClasses ecoreClass="SuperModCore.ecore#//OptionRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//OptionRef/option"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//NegExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//NegExpr/neg"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCore.ecore#//BinaryExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//BinaryExpr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModCore.ecore#//BinaryExpr/right"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCore.ecore#//AndExpr"/>
+    <genClasses ecoreClass="SuperModCore.ecore#//OrExpr"/>
+    <genClasses ecoreClass="SuperModCore.ecore#//XorExpr"/>
+    <genClasses ecoreClass="SuperModCore.ecore#//ImpliesExpr"/>
+    <genClasses ecoreClass="SuperModCore.ecore#//BiconditionalExpr"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,96 @@
+/******************************************************************************
+ * Copyright (c) 2014 Chair for Applied Computer Science I, University of 
+ * Bayreuth. All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html 
+ *****************************************************************************/
+ 
+grammar de.ubt.ai1.supermod.oel.OptionLang hidden(WS)
+
+import "http://ai1.uni-bayreuth.de/supermod/core/0.1.0" as core
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+OptionExpr returns core::OptionExpr:
+	BiconditionalExpr | BigExpr
+;
+
+BiconditionalExpr returns core::OptionExpr:
+	ImpliesExpr ({core::BiconditionalExpr.left=current} K_IFF right=BiconditionalExpr)*
+;
+
+ImpliesExpr returns core::OptionExpr:
+	OrExpr ({core::ImpliesExpr.left=current} K_IMP right=OrExpr)*
+;
+
+OrExpr returns core::OptionExpr:
+	XorExpr ({core::OrExpr.left=current} K_OR right=XorExpr)*
+;
+
+XorExpr returns core::OptionExpr:
+	MinusExpr ({core::XorExpr.left=current} K_XOR right=MinusExpr)*
+;
+
+MinusExpr returns core::OptionExpr:
+	NandExpr ({core::MinusExpr.left=current} K_MINUS right=NandExpr)*
+;
+
+NandExpr returns core::OptionExpr:
+	AndExpr ({core::NandExpr.left=current} K_NAND right=AndExpr)*
+;
+
+AndExpr returns core::OptionExpr:
+	PrimaryExpr ({core::AndExpr.left=current} K_AND right=PrimaryExpr)*
+;
+
+PrimaryExpr returns core::OptionExpr:
+	P_OPEN ImpliesExpr P_CLOSE | OptionRef | NegExpr
+;
+
+BigExpr returns core::BigExpr:
+	BigAndExpr | BigOrExpr | BigXorExpr	| BigNandExpr
+;
+
+BigAndExpr returns core::BigAndExpr:
+	K_BIG_AND P_OPEN children+=OptionExpr (COMMA children+=OptionExpr)* P_CLOSE
+;
+
+BigOrExpr returns core::BigOrExpr:
+	K_BIG_OR P_OPEN children+=OptionExpr (COMMA children+=OptionExpr)* P_CLOSE
+;
+
+BigXorExpr returns core::BigXorExpr:
+	K_BIG_XOR P_OPEN children+=OptionExpr (COMMA children+=OptionExpr)* P_CLOSE
+;
+
+BigNandExpr returns core::BigNandExpr:
+	K_BIG_NAND P_OPEN children+=OptionExpr (COMMA children+=OptionExpr)* P_CLOSE
+;
+
+OptionRef returns core::OptionRef:
+	option=[core::Option|ID]
+;
+
+NegExpr returns core::NegExpr:
+	K_NOT neg=OptionExpr
+;
+
+terminal P_OPEN: '(';
+terminal P_CLOSE: ')';
+terminal K_NOT: 'not';
+terminal K_AND: 'and';
+terminal K_OR: 'or';
+terminal K_XOR: 'xor';
+terminal K_IMP: 'implies';
+terminal K_IFF: 'iff';
+terminal K_MINUS: 'minus';
+terminal K_NAND: 'nand';
+terminal K_BIG_AND: 'AND';
+terminal K_BIG_OR: 'OR';
+terminal K_BIG_XOR: 'XOR';
+terminal K_BIG_NAND: 'NAND';
+terminal COMMA : ',';
+
+terminal ID : ('a'..'z'|'A'..'Z'|'_'|'-') ('a'..'z'|'A'..'Z'|'_'|'-'|'0'..'9')*;
+
+terminal WS : (' '|'\t'|'\r'|'\n')+;

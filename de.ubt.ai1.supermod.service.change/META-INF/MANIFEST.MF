@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Change Version Dimension Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.change
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: com.google.inject,
+ de.ubt.ai1.supermod.mm.change,
+ de.ubt.ai1.supermod.service
+Export-Package: de.ubt.ai1.supermod.service.change

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<!-- before running this ant script, create a new Ant run configuration and select-->
+<!-- the option "run in the same JRE as the workspace" in the "JRE" tab.-->
+<!-- The script starts a background task that must terminate before starting cleanup!-->
+<!-- Watch the progress in the Eclipse progress bar (typically >10s)-->
+<project default="plugin_export" name="build">
+	<target name="plugin_export">
+		<pde.exportPlugins destination="lib\supermod" exportSource="false" exportType="directory" 
+			plugins="de.ubt.ai1.supermod.mm.change,de.ubt.ai1.supermod.mm.collab,de.ubt.ai1.supermod.mm.core,de.ubt.ai1.supermod.mm.diff,de.ubt.ai1.supermod.mm.emffile,de.ubt.ai1.supermod.mm.feature,de.ubt.ai1.supermod.mm.file,de.ubt.ai1.supermod.mm.list,de.ubt.ai1.supermod.mm.textfile,de.ubt.ai1.supermod.module.server,de.ubt.ai1.supermod.service,de.ubt.ai1.supermod.service.change,de.ubt.ai1.supermod.service.collab,de.ubt.ai1.supermod.service.collfeat,de.ubt.ai1.supermod.service.emffile,de.ubt.ai1.supermod.service.featfile,de.ubt.ai1.supermod.service.feature,de.ubt.ai1.supermod.service.file,de.ubt.ai1.supermod.service.hetfile,de.ubt.ai1.supermod.service.list,de.ubt.ai1.supermod.service.textfile,de.ubt.ai1.supermod.util.emf" useJARFormat="true"/>
+	</target>
+</project>

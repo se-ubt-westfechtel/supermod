@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.ubt.ai1.supermod.feature.famileexport"
+      label="SuperMod to FAMILE Export"
+      version="0.1.0.qualifier"
+      provider-name="http://ai1.uni-bayreuth.de"
+      license-feature="org.eclipse.emf">
+
+   <description url="http://www.example.com/description">
+      This plug-in contains an export facility that converts a SuperMod
+project into a corresponding FAMILE project, in order to convert
+between filtered and unfiltered MDPL editing.
+
+In order to function properly, it is required that you install
+FAMILE first: http://btn1x4.inf.uni-bayreuth.de/famile/update
+Select at least the &quot;feature modeling&quot; and &quot;F2DMM&quot; features.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2014 Chair for Applied Computer Science I, University
+of Bayreuth. All rights reserved. This program and the accompanying
+materials are made available under the terms of the Eclipse Public
+License v1.0 which accompanies this distribution, and is available
+at http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="SuperMod Update Site" url="http://btn1x4.inf.uni-bayreuth.de/supermod/update"/>
+      <discovery label="FAMILE update site" url="http://btn1x4.inf.uni-bayreuth.de/famile/update"/>
+   </url>
+
+   <requires>
+      <import plugin="de.ubt.ai1.supermod.vcs.client.team"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="de.ubt.ai1.supermod.service.client"/>
+      <import plugin="org.eclipse.emf"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="de.ubt.ai1.supermod.mm.client"/>
+      <import plugin="de.ubt.ai1.supermod.mm.feature"/>
+      <import plugin="com.google.inject"/>
+      <import plugin="de.ubt.ai1.supermod.service"/>
+      <import plugin="de.ubt.ai1.supermod.service.feature"/>
+      <import plugin="de.ubt.ai1.supermod.service.revision"/>
+      <import plugin="de.ubt.ai1.fm"/>
+      <import plugin="de.ubt.ai1.supermod.module.client"/>
+      <import plugin="de.ubt.ai1.supermod.module.hetfile.revfeat.client"/>
+      <import plugin="de.ubt.ai1.supermod.service.file"/>
+      <import plugin="de.ubt.ai1.supermod.mm.file"/>
+      <import plugin="de.ubt.ai1.supermod.service.file.client"/>
+      <import plugin="de.ubt.ai1.supermod.mm.file.client"/>
+      <import plugin="de.ubt.ai1.supermod.mm.emffile.client"/>
+      <import plugin="de.ubt.ai1.famile.ui"/>
+      <import plugin="de.ubt.ai1.f2dmm"/>
+      <import plugin="de.ubt.ai1.util.emf"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="de.ubt.ai1.famile"/>
+      <import plugin="de.ubt.ai1.f2dmm.sync"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="de.ubt.ai1.supermod.mm.core"/>
+      <import plugin="de.ubt.ai1.supermod.mm.change"/>
+      <import plugin="de.ubt.ai1.supermod.mm.revision"/>
+   </requires>
+
+   <plugin
+         id="de.ubt.ai1.supermod.adapters.famile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

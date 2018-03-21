@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Change Version Dimension Client Service Implementations
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.change.client
+Bundle-Version: 0.1.0.qualifier
+Export-Package: de.ubt.ai1.supermod.service.change.client
+Require-Bundle: de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.mm.change,
+ com.google.inject,
+ de.ubt.ai1.supermod.service.change,
+ de.ubt.ai1.supermod.service,
+ de.ubt.ai1.supermod.mm.core,
+ de.ubt.ai1.supermod.mm.diff
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

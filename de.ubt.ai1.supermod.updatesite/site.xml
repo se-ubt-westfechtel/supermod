@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.ubt.ai1.supermod.feature.collfeat_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.collfeat" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.core_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.core" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.emfws_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.emfws" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.famileexport_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.famileexport" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.purecoll_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.purecoll" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.purefeat_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.purefeat" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.purelog_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.purelog" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.puretemp_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.puretemp" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.revfeat_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.revfeat" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <feature url="features/de.ubt.ai1.supermod.feature.revlog_0.1.0.201802231000.jar" id="de.ubt.ai1.supermod.feature.revlog" version="0.1.0.201802231000">
+      <category name="de.ubt.ai1.supermod"/>
+   </feature>
+   <category-def name="de.ubt.ai1.supermod" label="SuperMod">
+      <description>
+         SuperMod is a highly configurable local version control system,which
+is based on a flexible versioning model that allows to combine
+logical and temporal versioning.
+The Core feature is mandatory. In addition, at least one Version Model plug-in should be selected. Several Version Model plug-ins may coexist without any further restrictions.
+      </description>
+   </category-def>
+</site>

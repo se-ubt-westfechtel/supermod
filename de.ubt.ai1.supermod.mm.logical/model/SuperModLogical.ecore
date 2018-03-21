@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logical" nsURI="http://ai1.uni-bayreuth.de/supermod/logical/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.logical">
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalDimension" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionDimension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOptions" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Option"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalInvariants" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalPreferences" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Preference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalDefaults" upperBound="-1"
+        eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//DefaultBinding"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

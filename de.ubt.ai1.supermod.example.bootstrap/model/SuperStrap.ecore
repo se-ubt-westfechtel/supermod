@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="superstrap" nsURI="http://ai1.uni-bayreuth.de/supermod/example/bootstrap/0.1.0/superstrap"
+    nsPrefix="de.ubt.ai1.supermod.example.bootstrap">
+  <eClassifiers xsi:type="ecore:EClass" name="Repository">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="architectureCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vforest" eType="#//VisibilityForest"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensions" lowerBound="1"
+        upperBound="-1" eType="#//Dimension" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dimension">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DimensionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controlledDimensions" ordered="false"
+        upperBound="-1" eType="#//Dimension"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DimensionType">
+    <eLiterals name="Product"/>
+    <eLiterals name="Version" value="1"/>
+    <eLiterals name="Hybrid" value="2"/>
+    <eLiterals name="Transparent" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VisibilityForest"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.change/src" editDirectory="/de.ubt.ai1.supermod.edit.change/src"
+    modelPluginID="de.ubt.ai1.supermod.mm.change" modelName="SuperModChange" editPluginClass="de.ubt.ai1.supermod.edit.change.provider.SuperModChangeEditPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.ubt.ai1.supermod.edit.change"
+    usedGenPackages="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModChange.ecore</foreignModel>
+  <genPackages prefix="SuperModChange" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      ecorePackage="SuperModChange.ecore#/">
+    <genClasses ecoreClass="SuperModChange.ecore#//ChangeDimension">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          ecoreFeature="ecore:EReference SuperModChange.ecore#//ChangeDimension/changeSets"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModChange.ecore#//ChangeSet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//ChangeSet/changes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModChange.ecore#//ChangeSet/uuid"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModChange.ecore#//Change">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//Change/changeOption"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//Change/changePreference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//Change/changeDefault"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//Change/changeInvariant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//Change/userAmbition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//Change/affectedDimension"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModChange.ecore#//Change/changeSet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModChange.ecore#//Change/uuid"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

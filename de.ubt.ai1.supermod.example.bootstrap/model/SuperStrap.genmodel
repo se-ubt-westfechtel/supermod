@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.ubt.ai1.supermod.example.bootstrap/src" modelPluginID="de.ubt.ai1.supermod.example.bootstrap"
+    modelName="SuperStrap" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    booleanFlagsField="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperStrap.ecore</foreignModel>
+  <genPackages prefix="Superstrap" basePackage="de.ubt.ai1.supermod.example.bootstrap"
+      resource="XMI" disposableProviderFactory="true" ecorePackage="SuperStrap.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SuperStrap.ecore#//DimensionType">
+      <genEnumLiterals ecoreEnumLiteral="SuperStrap.ecore#//DimensionType/Product"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperStrap.ecore#//DimensionType/Version"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperStrap.ecore#//DimensionType/Hybrid"/>
+      <genEnumLiterals ecoreEnumLiteral="SuperStrap.ecore#//DimensionType/Transparent"/>
+    </genEnums>
+    <genClasses ecoreClass="SuperStrap.ecore#//Repository">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperStrap.ecore#//Repository/architectureCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperStrap.ecore#//Repository/dimensions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperStrap.ecore#//Repository/vforest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SuperStrap.ecore#//Repository/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperStrap.ecore#//Dimension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperStrap.ecore#//Dimension/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperStrap.ecore#//Dimension/controlledDimensions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperStrap.ecore#//Dimension/editable"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperStrap.ecore#//VisibilityForest"/>
+    <genClasses ecoreClass="SuperStrap.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperStrap.ecore#//Operation/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

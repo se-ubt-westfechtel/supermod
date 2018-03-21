@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.ubt.ai1.supermod.module.client.injectorProvider">
+      <moduleProvider
+            description="A heterogeneous file system (EMF, text, XML) versioned by a feature model"
+            moduleId="de.ubt.ai1.supermod.hetfile.purefeat"
+            moduleProviderClass="de.ubt.ai1.supermod.module.hetfile.purefeat.client.HetfilePurefeatClientModuleInjectorProvider"
+            remote="false">
+      </moduleProvider>
+   </extension>
+
+</plugin>

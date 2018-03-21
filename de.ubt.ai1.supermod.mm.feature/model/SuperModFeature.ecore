@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="feature" nsURI="http://ai1.uni-bayreuth.de/supermod/feature/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.feature">
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureModel" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridDimension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roots" upperBound="-1"
+        eType="#//RootRelationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true" eOpposite="#//Feature/featureModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureModel" eType="#//FeatureModel"
+        eOpposite="#//FeatureModel/features"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureOption" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Option"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="names" upperBound="-1"
+        eType="#//DisplayName" containment="true" eOpposite="#//DisplayName/feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//ChildRelationship" containment="true" eOpposite="#//ChildRelationship/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parents" upperBound="-1"
+        eType="#//ChildRelationship" eOpposite="#//ChildRelationship/child"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//FeatureGroup" containment="true" eOpposite="#//FeatureGroup/parentFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupedBy" upperBound="-1"
+        eType="#//GroupMembership" eOpposite="#//GroupMembership/groupedFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingDependencies" upperBound="-1"
+        eType="#//FeatureDependency" eOpposite="#//FeatureDependency/targetFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingDependencies" upperBound="-1"
+        eType="#//FeatureDependency" containment="true" eOpposite="#//FeatureDependency/sourceFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mandatory" eType="#//Mandatory"
+        containment="true" eOpposite="#//Mandatory/feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eliminations" upperBound="2"
+        eType="#//Elimination" containment="true" eOpposite="#//Elimination/feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingRoots" upperBound="-1"
+        eType="#//RootRelationship" eOpposite="#//RootRelationship/feature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allChildFeatures" upperBound="-1"
+        eType="#//Feature" changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transitiveEliminationState"
+        eType="ecore:EEnum ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Tristate"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DisplayName" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Feature"
+        eOpposite="#//Feature/names"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureGroup" abstract="true" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupedFeatures" upperBound="-1"
+        eType="#//GroupMembership" containment="true" eOpposite="#//GroupMembership/group"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupInvariant" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentFeature" eType="#//Feature"
+        eOpposite="#//Feature/groups"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GroupMembership" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groupedFeature" eType="#//Feature"
+        eOpposite="#//Feature/groupedBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="group" eType="#//FeatureGroup"
+        eOpposite="#//FeatureGroup/groupedFeatures"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrFeatureGroup" eSuperTypes="#//FeatureGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XorFeatureGroup" eSuperTypes="#//FeatureGroup"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureDependency" abstract="true" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencyInvariant" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourceFeature" eType="#//Feature"
+        eOpposite="#//Feature/outgoingDependencies"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetFeature" eType="#//Feature"
+        eOpposite="#//Feature/incomingDependencies"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureRequirement" eSuperTypes="#//FeatureDependency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureExclusion" eSuperTypes="#//FeatureDependency"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RootRelationship" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootInvariant" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootDefault" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//DefaultBinding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Feature"
+        eOpposite="#//Feature/incomingRoots"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChildRelationship" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Feature"
+        eOpposite="#//Feature/children"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="child" eType="#//Feature"
+        eOpposite="#//Feature/parents"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentInvariant" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentPreference" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Preference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mandatory" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Feature"
+        eOpposite="#//Feature/mandatory"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Elimination" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//HybridElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" eType="#//Feature"
+        eOpposite="#//Feature/eliminations"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultSelection" eType="ecore:EEnum ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Tristate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eliminationInvariant" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eliminationDefault" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//DefaultBinding"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

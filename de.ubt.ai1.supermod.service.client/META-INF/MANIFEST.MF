@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SuperMod Client Service Interfaces
+Bundle-SymbolicName: de.ubt.ai1.supermod.service.client;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Export-Package: de.ubt.ai1.supermod.service.client,
+ de.ubt.ai1.supermod.service.client.exceptions,
+ de.ubt.ai1.supermod.service.generic.client,
+ de.ubt.ai1.supermod.service.generic.client.impl
+Bundle-Vendor: http://ai1.uni-bayreuth.de
+Require-Bundle: de.ubt.ai1.supermod.mm.client,
+ de.ubt.ai1.supermod.mm.diff,
+ com.google.inject,
+ de.ubt.ai1.supermod.service,
+ org.eclipse.jface,
+ de.ubt.ai1.supermod.edit.core,
+ org.eclipse.core.resources,
+ org.eclipse.core.runtime,
+ de.ubt.ai1.supermod.util.emf,
+ org.eclipse.ui.workbench,
+ org.eclipse.emf.edit.ui,
+ de.ubt.ai1.supermod.edit.client
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

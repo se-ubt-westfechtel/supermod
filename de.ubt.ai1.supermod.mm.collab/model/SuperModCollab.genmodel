@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.collab/src" editDirectory="/de.ubt.ai1.supermod.edit.collab/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.collab/src" modelPluginID="de.ubt.ai1.supermod.mm.collab"
+    modelName="SuperModCollab" editPluginClass="de.ubt.ai1.supermod.edit.collab.provider.SuperModCollabEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.collab.presentation.SuperModCollabEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" providerRootExtendsClass="de.ubt.ai1.supermod.edit.core.provider.ColumnOneItemProviderAdapter"
+    editPluginID="de.ubt.ai1.supermod.edit.collab" editorPluginID="de.ubt.ai1.supermod.editor.collab"
+    tableProviders="true" colorProviders="true" fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModCollab.ecore</foreignModel>
+  <genPackages prefix="SuperModCollab" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      ecorePackage="SuperModCollab.ecore#/">
+    <genClasses ecoreClass="SuperModCollab.ecore#//CollaborativeRevisionDimension">
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//CollaborativeRevisionDimension/publicRevisions"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCollab.ecore#//CollaborativeRevisionDimension/initialPrivateRevision"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//CollaborativeRevisionDimension/initialPrivateRevisionInvariant"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCollab.ecore#//CollaborativeRevisionDimension/latestPublicRevisionNumber"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCollab.ecore#//CollaborativeRevisionDimension/publicHead"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//CollaborativeRevisionDimension/allRevisions"/>
+      <genOperations ecoreOperation="SuperModCollab.ecore#//CollaborativeRevisionDimension/getRevisionsForBinding">
+        <genParameters ecoreParameter="SuperModCollab.ecore#//CollaborativeRevisionDimension/getRevisionsForBinding/binding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCollab.ecore#//CollaborativeRevisionDimension/getLatestRevisions">
+        <genParameters ecoreParameter="SuperModCollab.ecore#//CollaborativeRevisionDimension/getLatestRevisions/revisions"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModCollab.ecore#//CollaborativeRevisionDimension/getLatestPublicRevisions">
+        <genParameters ecoreParameter="SuperModCollab.ecore#//CollaborativeRevisionDimension/getLatestPublicRevisions/publicRevisions"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="SuperModCollab.ecore#//Revision">
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/predecessors"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/successors"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/allPredecessors"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/allSuccessors"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/earliestPredecessors"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/latestSuccessors"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/revisionOption"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/revisionDefaultBinding"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//Revision/predecessorPreferences"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCollab.ecore#//Revision/revisionNumber"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCollab.ecore#//Revision/displayRevisionNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SuperModCollab.ecore#//Revision/date"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCollab.ecore#//PublicRevision">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//PublicRevision/privateRevisions"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCollab.ecore#//PublicRevision/committer"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EAttribute SuperModCollab.ecore#//PublicRevision/latestPrivateRevisionNumber"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCollab.ecore#//PublicRevision/initialPrivateRevision"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModCollab.ecore#//PublicRevision/privateHead"/>
+    </genClasses>
+    <genClasses ecoreClass="SuperModCollab.ecore#//PrivateRevision">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModCollab.ecore#//PrivateRevision/publicRevision"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModCollab.ecore#//PrivateRevision/commitMessage"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

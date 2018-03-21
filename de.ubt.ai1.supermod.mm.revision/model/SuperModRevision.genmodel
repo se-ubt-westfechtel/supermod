@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.revision/src" editDirectory="/de.ubt.ai1.supermod.edit.revision/src"
+    editorDirectory="/de.ubt.ai1.supermod.editor.revision/src" modelPluginID="de.ubt.ai1.supermod.mm.revision"
+    modelName="SuperModRevision" editPluginClass="de.ubt.ai1.supermod.edit.revision.provider.SuperModTemporalEditPlugin"
+    editorPluginClass="de.ubt.ai1.supermod.editor.revision.presentation.SuperModTemporalEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" providerRootExtendsClass="de.ubt.ai1.supermod.edit.core.provider.ColumnOneItemProviderAdapter"
+    editPluginID="de.ubt.ai1.supermod.edit.revision" editorPluginID="de.ubt.ai1.supermod.editor.revision"
+    tableProviders="true" colorProviders="true" fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModRevision.ecore</foreignModel>
+  <genPackages prefix="SuperModRevision" basePackage="de.ubt.ai1.supermod.mm" disposableProviderFactory="true"
+      ecorePackage="SuperModRevision.ecore#/">
+    <genClasses ecoreClass="SuperModRevision.ecore#//RevisionDimension">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference SuperModRevision.ecore#//RevisionDimension/revisions"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModRevision.ecore#//RevisionDimension/initialRevision"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModRevision.ecore#//RevisionDimension/initialRevisionInvariant"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModRevision.ecore#//RevisionDimension/latestRevisionNumber"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModRevision.ecore#//RevisionDimension/head"/>
+      <genOperations ecoreOperation="SuperModRevision.ecore#//RevisionDimension/getRevisionsForBinding">
+        <genParameters ecoreParameter="SuperModRevision.ecore#//RevisionDimension/getRevisionsForBinding/binding"/>
+      </genOperations>
+      <genOperations ecoreOperation="SuperModRevision.ecore#//RevisionDimension/getLatestRevisions">
+        <genParameters ecoreParameter="SuperModRevision.ecore#//RevisionDimension/getLatestRevisions/revisions"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="SuperModRevision.ecore#//Revision">
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/predecessors"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/successors"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModRevision.ecore#//Revision/revisionNumber"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModRevision.ecore#//Revision/committer"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModRevision.ecore#//Revision/commitMessage"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute SuperModRevision.ecore#//Revision/date"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/allPredecessors"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/allSuccessors"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/earliestPredecessors"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/latestSuccessors"/>
+      <genFeatures property="None" createChild="false" ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/revisionOption"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/revisionDefaultBinding"/>
+      <genFeatures property="None" notify="false" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference SuperModRevision.ecore#//Revision/predecessorPreferences"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

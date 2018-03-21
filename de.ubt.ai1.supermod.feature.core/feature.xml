@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.ubt.ai1.supermod.feature.core"
+      label="SuperMod Core"
+      version="0.1.0.qualifier"
+      provider-name="http://ai1.uni-bayreuth.de"
+      license-feature="org.eclipse.emf">
+
+   <description>
+      SuperMod is a highly configurable local version control system,which is based on a flexible versioning model that allows to combine logical and temporal versioning. Please install at least one of the additional version model plug-ins.
+   </description>
+
+   <copyright>
+      Copyright (c) 2014 Chair for Applied Computer Science I, University of Bayreuth. All rights reserved. This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="SuperMod Update Site" url="http://btn1x4.inf.uni-bayreuth.de/supermod/update"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="com.google.inject"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.sat4j.core"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.emf.edit.ui"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.validation"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.team.core"/>
+      <import plugin="org.eclipse.team.ui"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.emf.common.ui"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.emf" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.8.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.8.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.8.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.9.1" match="greaterOrEqual"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.apache.commons.logging"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+   </requires>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.emffile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.emffile.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.file"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.list"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.list.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.diff"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.emffile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.emffile.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.file"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.file.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.list"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.list.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.textfile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.module.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.emffile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.emffile.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.file"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.file.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.hetfile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.hetfile.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.list"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.list.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.textfile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.service.textfile.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.vcs.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.vcs.client.team"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.util.emf"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.mm.textfile.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.edit.file.client"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.ubt.ai1.supermod.text.oel"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

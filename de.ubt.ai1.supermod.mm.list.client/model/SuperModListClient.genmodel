@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2014 Chair for Applied Computer Science I, University of &#xD;&#xA;Bayreuth. All rights reserved. This program and the accompanying materials&#xD;&#xA;are made available under the terms of the Eclipse Public License v1.0&#xD;&#xA;which accompanies this distribution, and is available at&#xD;&#xA;http://www.eclipse.org/legal/epl-v10.html"
+    modelDirectory="/de.ubt.ai1.supermod.mm.list.client/src" editDirectory="/de.ubt.ai1.supermod.edit.list.client/src"
+    modelPluginID="de.ubt.ai1.supermod.mm.list.client" modelName="SuperModListClient"
+    editPluginClass="de.ubt.ai1.supermod.edit.list.client.provider.SuperModListClientEditPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="de.ubt.ai1.supermod.edit.list.client"
+    tableProviders="true" colorProviders="true" fontProviders="true" usedGenPackages="../../de.ubt.ai1.supermod.mm.client/model/SuperModClient.genmodel#//client ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.genmodel#//core ../../de.ubt.ai1.supermod.mm.list/model/SuperModList.genmodel#//list"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>SuperModListClient.ecore</foreignModel>
+  <genPackages prefix="SuperModListClient" basePackage="de.ubt.ai1.supermod.mm.list"
+      disposableProviderFactory="true" ecorePackage="SuperModListClient.ecore#/">
+    <genClasses ecoreClass="SuperModListClient.ecore#//OrderingConflict">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModListClient.ecore#//OrderingConflict/contextList"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModListClient.ecore#//OrderingConflict/lastVertex"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModListClient.ecore#//OrderingConflict/successorEdges"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SuperModListClient.ecore#//OrderingConflict/successorVertices"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

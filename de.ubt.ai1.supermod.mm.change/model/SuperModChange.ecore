@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="change" nsURI="http://ai1.uni-bayreuth.de/supermod/change/0.1.0"
+    nsPrefix="de.ubt.ai1.supermod.mm.change">
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeDimension" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionDimension">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changeSets" upperBound="-1"
+        eType="#//ChangeSet" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeSet" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionSpaceElement ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changes" upperBound="-1"
+        eType="#//Change" containment="true" eOpposite="#//Change/changeSet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Change" eSuperTypes="../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//VersionSpaceElement ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//UUIDElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changeOption" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Option"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changePreference" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Preference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changeInvariant" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//Invariant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userAmbitionBinding" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionBinding"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="userAmbitionExpr" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//OptionExpr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedDimension" eType="ecore:EClass ../../de.ubt.ai1.supermod.mm.core/model/SuperModCore.ecore#//ProductDimension"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changeSet" eType="#//ChangeSet"
+        eOpposite="#//ChangeSet/changes"/>
+  </eClassifiers>
+</ecore:EPackage>
