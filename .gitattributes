@@ -1,2 +1,2 @@
-* linguist-vendored
 *.ecore linguist-language=Ecore
+*.genmodel linguist-language=Ecore
