@@ -14,7 +14,7 @@ A five-minute tool demo video is provided here: [https://www.youtube.com/watch?v
 SuperMod consists of a mandatory client-side application and an optional server-side application, which is only required for multi-user operation.
 
 ## Client-Side
-The client-side is provided as Eclipse plugin here: [http://btn1x4.inf.uni-bayreuth.de/supermod/update/](http://btn1x4.inf.uni-bayreuth.de/supermod/update/)
+The client-side is provided as Eclipse plugin here: [https://github.com/se-ubt/supermod/raw/master/update/](https://github.com/se-ubt/supermod/raw/master/update/)
 
 Without any further dependencies, these plug-ins can be installed, e.g., into a clean [Eclipse Oxygen (Modeling Edition)](http://www.eclipse.org/downloads/packages/release/Oxygen) distribution.
 
@@ -24,7 +24,7 @@ SuperMod is integrated into the "Team" context menu in the Eclipse package explo
 
 ## Server-Side
 The server-side has been implemented as Apache Tomcat 7 webservice. We offer a pre-compiled servlet (WAR archive) here:
-[btn1x4.inf.uni-bayreuth.de/supermod/webapp/supermod-server.war](btn1x4.inf.uni-bayreuth.de/supermod/webapp/supermod-server.war)
+[https://github.com/se-ubt/supermod/raw/master/artifacts/supermod-server.war](https://github.com/se-ubt/supermod/raw/master/artifacts/supermod-server.war)
 
 Depending on the location where your Tomcat host runs, the SuperMod repository URLs would look as follows:
 http://my-server.foo/supermod-server/repos/my-repo
